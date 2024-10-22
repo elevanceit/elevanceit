@@ -1,0 +1,16 @@
+{
+  "reject": [
+    "eslint",
+    "storybook",
+    "tsparticles",
+    "tsparticles",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions",
+    "@storybook/addon-links",
+    "@storybook/blocks",
+    "@storybook/nextjs",
+    "@storybook/react",
+    "@storybook/test-runner",
+    "@storybook/testing-library"
+  ]
+}
