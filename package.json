@@ -38,7 +38,8 @@
     "postinstall": "npx patch-package -y",
     "coupling-graph": "npx madge --extensions js,jsx,ts,tsx,css,md,mdx ./ --exclude '.next|tailwind.config.js|reset.d.ts|prettier.config.js|postcss.config.js|playwright.config.ts|next.config.js|next-env.d.ts|instrumentation.ts|e2e/|README.md|.storybook/|.eslintrc.js' --image graph.svg",
     "sitemap": "next-sitemap",
-    "svgr": "svgr -d components/icons --icon --typescript icons --no-prettier && prettier components/icons --write"
+    "svgr": "svgr -d components/icons --icon --typescript icons --no-prettier && prettier components/icons --write",
+    "prepare": "husky"
   },
   "dependencies": {
     "@clerk/nextjs": "5.7.5",
@@ -216,6 +217,7 @@
     "eslint-plugin-unused-imports": "4.1.4",
     "fetch-mock": "11.1.5",
     "gzip-size": "7.0.0",
+    "husky": "^9.1.6",
     "jest": "29.7.0",
     "jest-environment-jsdom": "29.7.0",
     "mkdirp": "3.0.1",
