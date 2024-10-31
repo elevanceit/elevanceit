@@ -1,11 +1,13 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const { pick, omit } = require("lodash");
-const colors = require("tailwindcss/colors");
-const defaultTheme = require("tailwindcss/defaultTheme");
-const plugin = require("tailwindcss/plugin");
+import forms from "@tailwindcss/forms";
+import typography from "@tailwindcss/typography";
+import scrollbar from "tailwind-scrollbar";
+import type { Config } from "tailwindcss";
+import tailwind3d from "tailwindcss-3d";
+import animate from "tailwindcss-animate";
+import radix from "tailwindcss-radix";
+import plugin from "tailwindcss/plugin";
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const config: Config = {
   darkMode: "class",
   content: [
     "./index.html",
@@ -30,40 +32,19 @@ module.exports = {
       padding: "1rem",
     },
     screens: {
-      "2xs": "375px",
-      // => @media (min-width: 375px) { ... }
-
-      xs: "450px",
-      // => @media (min-width: 450px) { ... }
-
-      sm: "575px",
-      // => @media (min-width: 576px) { ... }
-
-      md: "768px",
-      // => @media (min-width: 768px) { ... }
-
-      lg: "992px",
-      // => @media (min-width: 992px) { ... }
-
-      xl: "1200px",
-      // => @media (min-width: 1200px) { ... }
-
-      "2xl": "1400px",
-      // => @media (min-width: 1400px) { ... }
+      "2xs": "375px", // => @media (min-width: 375px) { ... }
+      xs: "450px", // => @media (min-width: 450px) { ... }
+      sm: "575px", // => @media (min-width: 576px) { ... }
+      md: "768px", // => @media (min-width: 768px) { ... }
+      lg: "992px", // => @media (min-width: 992px) { ... }
+      xl: "1200px", // => @media (min-width: 1200px) { ... }
+      "2xl": "1400px", // => @media (min-width: 1400px) { ... }
     },
-
     extend: {
       fontWeight: {
         inherit: "inherit",
       },
-      // Goto https://javisperez.github.io/tailwindcolorshades to generate colors
       colors: {
-        // current: "currentColor",
-        // transparent: "transparent",
-        //
-        // black: "#000000",
-        // white: "#ffffff",
-
         primary: {
           50: "#e3ecff",
           100: "#c8d9ff",
@@ -77,7 +58,6 @@ module.exports = {
           900: "#2050ff",
           950: "#1b43d5",
         },
-
         secondary: {
           50: "#f2f4f5",
           100: "#e1e5e8",
@@ -91,7 +71,6 @@ module.exports = {
           900: "#15191c",
           950: "#0c0e10",
         },
-
         success: {
           50: "#dff2ec",
           100: "#c0e5d9",
@@ -105,7 +84,6 @@ module.exports = {
           900: "#107d4f",
           950: "#0a5736",
         },
-
         danger: {
           50: "#fadede",
           100: "#f5bebe",
@@ -119,7 +97,6 @@ module.exports = {
           900: "#c50d0d",
           950: "#a50909",
         },
-
         warning: {
           50: "#fbedd9",
           100: "#f7dcb3",
@@ -133,7 +110,6 @@ module.exports = {
           900: "#d35a00",
           950: "#b54d00",
         },
-
         info: {
           50: "#e2f7f9",
           100: "#c5eff3",
@@ -147,7 +123,6 @@ module.exports = {
           900: "#1ba9bc",
           950: "#148999",
         },
-
         dark: {
           50: "#e6e8eb",
           100: "#ced2d7",
@@ -161,7 +136,6 @@ module.exports = {
           900: "#060607",
           950: "#020303",
         },
-
         shark: {
           50: "#F0F3F5",
           100: "#E1E8EB",
@@ -176,15 +150,14 @@ module.exports = {
           950: "#02050D",
         },
       },
-
       keyframes: {
         slideDown: {
-          from: { height: 0 },
+          from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
         },
         slideUp: {
           from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: 0 },
+          to: { height: "0" },
         },
         wiggle: {
           "0%, 100%": { transform: "rotate(-8deg)" },
@@ -199,12 +172,12 @@ module.exports = {
     },
   },
   plugins: [
-    require("@tailwindcss/forms"),
-    require("@tailwindcss/typography"),
-    require("tailwind-scrollbar"),
-    require("tailwindcss-animate"),
-    require("tailwindcss-3d"),
-    require("tailwindcss-radix")(),
+    forms,
+    typography,
+    scrollbar,
+    animate,
+    tailwind3d,
+    radix({}),
     plugin(({ addVariant }) => {
       addVariant("mac", ".mac &");
       addVariant("windows", ".windows &");
@@ -215,3 +188,5 @@ module.exports = {
     hoverOnlyWhenSupported: true,
   },
 };
+
+export default config;

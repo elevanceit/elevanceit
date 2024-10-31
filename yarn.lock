@@ -9829,6 +9829,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/tailwindcss@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "@types/tailwindcss@npm:3.1.0"
+  dependencies:
+    tailwindcss: "npm:*"
+  checksum: 10c0/7a258e7ce46060fd598669605dabbeef16cf5d13f36bcb1764255837e7b889a4fa6b39a9ffd1c70eed55e0892c5dac079574371cbc343515a2850a088717ab68
+  languageName: node
+  linkType: hard
+
 "@types/testing-library__jest-dom@npm:6.0.0":
   version: 6.0.0
   resolution: "@types/testing-library__jest-dom@npm:6.0.0"
@@ -14044,6 +14053,7 @@ __metadata:
     "@types/react": "npm:18.3.12"
     "@types/react-dom": "npm:18.3.1"
     "@types/react-draft-wysiwyg": "npm:1.13.8"
+    "@types/tailwindcss": "npm:^3.1.0"
     "@types/testing-library__jest-dom": "npm:6.0.0"
     "@typescript-eslint/eslint-plugin": "npm:8.12.2"
     "@typescript-eslint/parser": "npm:8.12.2"
@@ -25702,7 +25712,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:3.4.14":
+"tailwindcss@npm:*, tailwindcss@npm:3.4.14":
   version: 3.4.14
   resolution: "tailwindcss@npm:3.4.14"
   dependencies:
