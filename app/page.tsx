@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { Servers } from "../components/Servers";
 
 export const metadata: Metadata = {
   title: "Elevance Innovation Technology",
@@ -18,5 +19,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <section className="">123</section>;
+  return (
+    <section className="">
+      <Servers />
+    </section>
+  );
 }

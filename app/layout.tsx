@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Montserrat } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 import "styles/styles.css";
 import { Call2Action } from "../components/Call2Action";
 import { Cursor } from "../components/Cursor";
@@ -14,6 +15,7 @@ import {
 } from "../constants";
 import { ThemeProvider } from "../providers/theme";
 import { cn } from "../utils";
+import { TRPCProvider } from "../providers/trpc";
 
 // import {usePathname} from "next/navigation";
 
@@ -33,7 +35,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body
         className={cn(
           font.className,
-          "group/page relative min-h-screen",
+          "group/page relative min-h-screen antialiased",
           "flex w-full flex-col",
         )}
       >
@@ -60,20 +62,24 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             },
           }}
         >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {HAS_CURSOR && <Cursor />}
+          <TRPCProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <NuqsAdapter>
+                {HAS_CURSOR && <Cursor />}
 
-            {HAS_TOTOP && <ToTop />}
+                {HAS_TOTOP && <ToTop />}
 
-            {HAS_CALL2ACTION && <Call2Action />}
+                {HAS_CALL2ACTION && <Call2Action />}
 
-            {children}
-          </ThemeProvider>
+                {children}
+              </NuqsAdapter>
+            </ThemeProvider>
+          </TRPCProvider>
         </ClerkProvider>
       </body>
     </html>
