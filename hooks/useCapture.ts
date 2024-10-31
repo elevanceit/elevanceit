@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 
 const acceptedImageTypes = [
   "image/png",
@@ -13,29 +13,27 @@ const acceptedImageTypes = [
   "image/heic",
   "image/tiff",
   "image/svg+xml",
-];
+]
 
 const checkClipboardForImage = async () => {
   try {
-    const clipboardItems = await navigator.clipboard.read();
+    const clipboardItems = await navigator.clipboard.read()
     for (const clipboardItem of clipboardItems) {
-      if (
-        acceptedImageTypes.some((type) => clipboardItem.types.includes(type))
-      ) {
-        return true;
+      if (acceptedImageTypes.some((type) => clipboardItem.types.includes(type))) {
+        return true
       }
     }
   } catch {
     //
   }
-  return false;
-};
+  return false
+}
 
 export const useCapture = () => {
-  const [capture, setCapture] = useState(false);
+  const [capture, setCapture] = useState(false)
 
   useEffect(() => {
-    if (capture) return;
+    if (capture) return
 
     const handleKeydown = async (event: KeyboardEvent) => {
       if (
@@ -53,29 +51,29 @@ export const useCapture = () => {
         (event.metaKey && event.key === "S" && event.ctrlKey) || // Detect Cmd + Ctrl + S (common Unix screenshot shortcut)
         (event.ctrlKey && event.key === "S") // Detect Ctrl + S (common Unix screenshot shortcut)
       ) {
-        setCapture(true);
+        setCapture(true)
       }
-    };
+    }
 
     const handleKeyup = () => {
-      setCapture(false);
-    };
+      setCapture(false)
+    }
 
-    window.addEventListener("keydown", handleKeydown);
-    window.addEventListener("keyup", handleKeyup);
+    window.addEventListener("keydown", handleKeydown)
+    window.addEventListener("keyup", handleKeyup)
 
     const interval = setInterval(async () => {
-      if (capture) return;
+      if (capture) return
 
-      setCapture(await checkClipboardForImage());
-    }, 1000 * 10);
+      setCapture(await checkClipboardForImage())
+    }, 1000 * 10)
 
     return () => {
-      window.removeEventListener("keydown", handleKeydown);
-      window.removeEventListener("keyup", handleKeyup);
-      clearInterval(interval);
-    };
-  }, [capture]);
+      window.removeEventListener("keydown", handleKeydown)
+      window.removeEventListener("keyup", handleKeyup)
+      clearInterval(interval)
+    }
+  }, [capture])
 
-  return capture;
-};
+  return capture
+}

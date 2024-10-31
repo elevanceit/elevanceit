@@ -1,23 +1,20 @@
-"use client";
+"use client"
 
-import { forwardRef, HTMLAttributes } from "react";
-import { cn } from "../utils";
-import { trpc } from "../trpc/client";
-import { useQueryState } from "nuqs";
+import { HTMLAttributes, forwardRef } from "react"
+import { useQueryState } from "nuqs"
+import { trpc } from "../trpc/client"
+import { cn } from "../utils"
 
-type Props = HTMLAttributes<HTMLDivElement>;
+type Props = HTMLAttributes<HTMLDivElement>
 
-export const Servers = forwardRef<HTMLDivElement, Props>(function Header(
-  { className, ...rest },
-  ref,
-) {
-  const [name, setName] = useQueryState("name");
+export const Servers = forwardRef<HTMLDivElement, Props>(function Header({ className, ...rest }, ref) {
+  const [name, setName] = useQueryState("name")
 
   const { data, isLoading } = trpc.examples.get.useQuery({
     a: 1,
     b: "2",
     c: "3",
-  });
+  })
 
   return (
     <div ref={ref} className={cn("", className)} {...rest}>
@@ -27,5 +24,5 @@ export const Servers = forwardRef<HTMLDivElement, Props>(function Header(
       <input value={name || ""} onChange={(e) => setName(e.target.value)} />
       <button onClick={() => setName(null)}>Clear</button>
     </div>
-  );
-});
+  )
+})

@@ -1,5 +1,5 @@
-import { HTMLAttributes } from "react";
-import Link from "next/link";
+import { HTMLAttributes } from "react"
+import Link from "next/link"
 import {
   faDiscord,
   faFacebook,
@@ -11,51 +11,51 @@ import {
   faTelegram,
   faTwitter,
   faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
-import { faLink } from "@fortawesome/pro-light-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { WEBSITE } from "../constants";
-import { cn } from "../utils";
+} from "@fortawesome/free-brands-svg-icons"
+import { faLink } from "@fortawesome/pro-light-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { WEBSITE } from "../constants"
+import { cn } from "../utils"
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  size?: string;
+  size?: string
 
-  cta?: string | null;
-  website?: string | null;
-  twitter?: string | null;
-  discord?: string | null;
-  medium?: string | null;
-  telegram?: string | null;
-  facebook?: string | null;
-  instagram?: string | null;
-  linkedin?: string | null;
-  reddit?: string | null;
-  github?: string | null;
-  gitlab?: string | null;
-  dribbble?: string | null;
-  stackoverflow?: string | null;
-  behance?: string | null;
-  skype?: string | null;
-  book?: string | null;
-  chrome?: string | null;
-  collection?: string | null;
-  wallet?: string | null;
-  bitcointalk?: string | null;
-  youtube?: string | null;
-  vk?: string | null;
-  video?: string | null;
-  blog?: string | null;
-  pinterest?: string | null;
-  tiktok?: string | null;
-  cmc?: string | null;
-  coingecko?: string | null;
-  pepeeth?: string | null;
-  wechat?: string | null;
-  google?: string | null;
-  linktr?: string | null;
+  cta?: string | null
+  website?: string | null
+  twitter?: string | null
+  discord?: string | null
+  medium?: string | null
+  telegram?: string | null
+  facebook?: string | null
+  instagram?: string | null
+  linkedin?: string | null
+  reddit?: string | null
+  github?: string | null
+  gitlab?: string | null
+  dribbble?: string | null
+  stackoverflow?: string | null
+  behance?: string | null
+  skype?: string | null
+  book?: string | null
+  chrome?: string | null
+  collection?: string | null
+  wallet?: string | null
+  bitcointalk?: string | null
+  youtube?: string | null
+  vk?: string | null
+  video?: string | null
+  blog?: string | null
+  pinterest?: string | null
+  tiktok?: string | null
+  cmc?: string | null
+  coingecko?: string | null
+  pepeeth?: string | null
+  wechat?: string | null
+  google?: string | null
+  linktr?: string | null
 
-  hasLabel?: boolean;
-  hasIcon?: boolean;
+  hasLabel?: boolean
+  hasIcon?: boolean
 }
 
 export function SocialLinks({
@@ -236,5 +236,5 @@ export function SocialLinks({
         </Link>
       )}
     </div>
-  );
+  )
 }

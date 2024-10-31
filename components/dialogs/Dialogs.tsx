@@ -1,8 +1,8 @@
-import { useDialogsStore } from "../../stores/dialogs";
-import { Dialog } from "./Dialog";
+import { useDialogsStore } from "../../stores/dialogs"
+import { Dialog } from "./Dialog"
 
 export function Dialogs() {
-  const dialogs = useDialogsStore();
+  const dialogs = useDialogsStore()
 
   return (
     <>
@@ -24,5 +24,5 @@ export function Dialogs() {
         {dialogs.signUp && <div>Sign Up</div>}
       </Dialog>
     </>
-  );
+  )
 }

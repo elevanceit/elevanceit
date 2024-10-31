@@ -4,38 +4,38 @@ import ReactSelect, {
   MultiValueRemoveProps,
   Props as ReactSelectProps,
   components,
-} from "react-select";
-import { faChevronDown, faClose } from "@fortawesome/pro-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { cn } from "../../utils";
+} from "react-select"
+import { faChevronDown, faClose } from "@fortawesome/pro-regular-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { cn } from "../../utils"
 
 interface Props extends ReactSelectProps {
   controlStyles?: {
-    base?: string;
-    focus?: string;
-    nonFocus?: string;
-  };
-  placeholderStyles?: string;
-  selectInputStyles?: string;
-  valueContainerStyles?: string;
-  singleValueStyles?: string;
-  multiValueStyles?: string;
-  multiValueLabelStyles?: string;
-  multiValueRemoveStyles?: string;
-  indicatorsContainerStyles?: string;
-  clearIndicatorStyles?: string;
-  indicatorSeparatorStyles?: string;
-  dropdownIndicatorStyles?: string;
-  menuStyles?: string;
-  menuPlacement?: "auto" | "bottom" | "top";
-  groupHeadingStyles?: string;
+    base?: string
+    focus?: string
+    nonFocus?: string
+  }
+  placeholderStyles?: string
+  selectInputStyles?: string
+  valueContainerStyles?: string
+  singleValueStyles?: string
+  multiValueStyles?: string
+  multiValueLabelStyles?: string
+  multiValueRemoveStyles?: string
+  indicatorsContainerStyles?: string
+  clearIndicatorStyles?: string
+  indicatorSeparatorStyles?: string
+  dropdownIndicatorStyles?: string
+  menuStyles?: string
+  menuPlacement?: "auto" | "bottom" | "top"
+  groupHeadingStyles?: string
   optionStyles?: {
-    base?: string;
-    focus?: string;
-    nonFocus?: string;
-    selected?: string;
-  };
-  noOptionsMessageStyles?: string;
+    base?: string
+    focus?: string
+    nonFocus?: string
+    selected?: string
+  }
+  noOptionsMessageStyles?: string
 }
 
 const DropdownIndicator = (props: DropdownIndicatorProps) => {
@@ -43,24 +43,24 @@ const DropdownIndicator = (props: DropdownIndicatorProps) => {
     <components.DropdownIndicator {...props}>
       <FontAwesomeIcon icon={faChevronDown} className="" />
     </components.DropdownIndicator>
-  );
-};
+  )
+}
 
 const ClearIndicator = (props: ClearIndicatorProps) => {
   return (
     <components.ClearIndicator {...props}>
       <FontAwesomeIcon icon={faClose} className="" />
     </components.ClearIndicator>
-  );
-};
+  )
+}
 
 const MultiValueRemove = (props: MultiValueRemoveProps) => {
   return (
     <components.MultiValueRemove {...props}>
       <FontAwesomeIcon icon={faClose} className="" />
     </components.MultiValueRemove>
-  );
-};
+  )
+}
 
 export const Multiselect = ({
   controlStyles = {
@@ -129,11 +129,7 @@ export const Multiselect = ({
         ...components,
       }}
       classNames={{
-        control: ({ isFocused }) =>
-          cn(
-            controlStyles?.base,
-            isFocused ? controlStyles?.focus : controlStyles?.nonFocus,
-          ),
+        control: ({ isFocused }) => cn(controlStyles?.base, isFocused ? controlStyles?.focus : controlStyles?.nonFocus),
         placeholder: () => placeholderStyles,
         input: () => selectInputStyles,
         valueContainer: () => valueContainerStyles,
@@ -151,7 +147,7 @@ export const Multiselect = ({
           cn(
             optionStyles?.base,
             isFocused ? optionStyles?.focus : optionStyles?.nonFocus,
-            isSelected && optionStyles?.selected,
+            isSelected && optionStyles?.selected
           ),
         noOptionsMessage: () => noOptionsMessageStyles,
         ...classNames,
@@ -159,5 +155,5 @@ export const Multiselect = ({
       className={cn("", className)}
       {...rest}
     />
-  );
-};
+  )
+}

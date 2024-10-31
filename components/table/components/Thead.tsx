@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes, ReactElement, cloneElement } from "react";
+import { FC, HTMLAttributes, ReactElement, cloneElement } from "react"
 
 interface Props extends HTMLAttributes<HTMLTableSectionElement> {}
 
@@ -7,5 +7,5 @@ export const Thead: FC<Props> = ({ children, ...rest }) => {
     <thead data-testid="thead" {...rest}>
       {cloneElement(children as ReactElement, { inside: true })}
     </thead>
-  );
-};
+  )
+}

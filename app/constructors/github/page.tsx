@@ -1,33 +1,20 @@
-import { Metadata } from "next";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-import {
-  faGithubSquare,
-  faLinkedin,
-  faTwitterSquare,
-} from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Banner } from "../../../banners/Banner";
-import {
-  ArrowRightTop,
-  Icon1,
-  Icon2,
-  Icon3,
-  Icon4,
-  Icon5,
-  Icon6,
-  Logotype,
-} from "../../../components/icons";
-import Bg1 from "../../../public/backgrounds/bg1.jpeg";
-import Bg2 from "../../../public/backgrounds/bg2.jpeg";
-import Bg3 from "../../../public/backgrounds/bg3.jpeg";
-import Bg4 from "../../../public/backgrounds/bg4.jpeg";
-import Bg5 from "../../../public/backgrounds/bg5.jpeg";
+import { Metadata } from "next"
+import { IconProp } from "@fortawesome/fontawesome-svg-core"
+import { faGithubSquare, faLinkedin, faTwitterSquare } from "@fortawesome/free-brands-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Banner } from "../../../banners/Banner"
+import { ArrowRightTop, Icon1, Icon2, Icon3, Icon4, Icon5, Icon6, Logotype } from "../../../components/icons"
+import Bg1 from "../../../public/backgrounds/bg1.jpeg"
+import Bg2 from "../../../public/backgrounds/bg2.jpeg"
+import Bg3 from "../../../public/backgrounds/bg3.jpeg"
+import Bg4 from "../../../public/backgrounds/bg4.jpeg"
+import Bg5 from "../../../public/backgrounds/bg5.jpeg"
 
 const socials: Record<string, IconProp> = {
   "Linked In": faLinkedin,
   Twitter: faTwitterSquare,
   Github: faGithubSquare,
-};
+}
 
 export const metadata: Metadata = {
   title: "",
@@ -44,7 +31,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
+}
 
 export default function Page() {
   return (
@@ -76,18 +63,14 @@ export default function Page() {
         </Banner>
 
         <div className="flex w-full gap-3">
-          <Banner
-            className="aspect-square w-1/3 rounded-2xl text-white"
-            image={Bg3}
-          >
+          <Banner className="aspect-square w-1/3 rounded-2xl text-white" image={Bg3}>
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-12">
               <div>
                 <Icon1 className="size-20" />
               </div>
               <div className="text-2xl font-bold">Proactivity</div>
               <div className="text-sm font-medium">
-                We take the initiative and anticipate challenges before they
-                arise.
+                We take the initiative and anticipate challenges before they arise.
               </div>
             </div>
           </Banner>
@@ -107,18 +90,13 @@ export default function Page() {
             </div>
           </Banner>
 
-          <Banner
-            className="aspect-square w-1/3 rounded-2xl text-white"
-            image={Bg4}
-          >
+          <Banner className="aspect-square w-1/3 rounded-2xl text-white" image={Bg4}>
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-12">
               <div>
                 <Icon3 className="size-20" />
               </div>
               <div className="text-2xl font-bold">Efficiency</div>
-              <div className="text-sm font-medium">
-                We strive for speed and precision in all our processes.
-              </div>
+              <div className="text-sm font-medium">We strive for speed and precision in all our processes.</div>
             </div>
           </Banner>
         </div>
@@ -134,23 +112,18 @@ export default function Page() {
               </div>
               <div className="text-2xl font-bold">Discipline</div>
               <div className="text-sm font-medium">
-                We maintain a consistent and organized approach to every
-                project.
+                We maintain a consistent and organized approach to every project.
               </div>
             </div>
           </Banner>
-          <Banner
-            className="aspect-square w-1/3 rounded-2xl text-white"
-            image={Bg5}
-          >
+          <Banner className="aspect-square w-1/3 rounded-2xl text-white" image={Bg5}>
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-12">
               <div>
                 <Icon5 className="size-20" />
               </div>
               <div className="text-2xl font-bold">Belief in Success</div>
               <div className="text-sm font-medium">
-                We are confident in achieving great results for both our clients
-                and ourselves.
+                We are confident in achieving great results for both our clients and ourselves.
               </div>
             </div>
           </Banner>
@@ -165,13 +138,12 @@ export default function Page() {
               </div>
               <div className="text-2xl font-bold">Desire for Improvement</div>
               <div className="text-sm font-medium">
-                We are always looking for ways to enhance our skills and the
-                solutions we provide.
+                We are always looking for ways to enhance our skills and the solutions we provide.
               </div>
             </div>
           </Banner>
         </div>
       </div>
     </section>
-  );
+  )
 }

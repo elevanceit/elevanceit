@@ -1,8 +1,8 @@
-import { Metadata } from "next";
-import { Button } from "../../../components/Button";
-import { Card } from "../../../components/Card";
-import { Headline } from "../../../elements/Headline";
-import { BUTTON_VARIANTS } from "../../../enums";
+import { Metadata } from "next"
+import { Button } from "../../../components/Button"
+import { Card } from "../../../components/Card"
+import { Headline } from "../../../elements/Headline"
+import { BUTTON_VARIANTS } from "../../../enums"
 
 export const metadata: Metadata = {
   title: "",
@@ -19,14 +19,13 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
+}
 
 export default function Page() {
   return (
     <section className="flex w-full flex-col gap-6">
       <Headline title="Buttons">
-        Use button styles for actions in forms, dialogs, and more with support
-        for multiple sizes, states, and more.
+        Use button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
       </Headline>
 
       <div className="flex gap-6">
@@ -64,5 +63,5 @@ export default function Page() {
         </div>
       </Card>
     </section>
-  );
+  )
 }

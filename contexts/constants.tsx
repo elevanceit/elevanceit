@@ -1,23 +1,19 @@
-import { createContext, useContext, useMemo, useState } from "react";
+import { createContext, useContext, useMemo, useState } from "react"
 
 export interface IConstantsContext {
-  client: boolean;
+  client: boolean
 }
 
 export const ConstantsContext = createContext<IConstantsContext>({
   client: typeof window !== "undefined",
-});
+})
 
 export function ConstantsProvider({ children }: { children: JSX.Element }) {
-  const [client, setClient] = useState(typeof window !== "undefined");
+  const [client, setClient] = useState(typeof window !== "undefined")
 
-  const contextValue = useMemo((): IConstantsContext => ({ client }), [client]);
+  const contextValue = useMemo((): IConstantsContext => ({ client }), [client])
 
-  return (
-    <ConstantsContext.Provider value={contextValue}>
-      {children}
-    </ConstantsContext.Provider>
-  );
+  return <ConstantsContext.Provider value={contextValue}>{children}</ConstantsContext.Provider>
 }
 
-export const useConstants = () => useContext(ConstantsContext);
+export const useConstants = () => useContext(ConstantsContext)

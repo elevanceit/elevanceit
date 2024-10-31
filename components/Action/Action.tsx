@@ -1,36 +1,18 @@
-import {
-  ForwardedRef,
-  HTMLAttributeAnchorTarget,
-  HTMLAttributes,
-  forwardRef,
-} from "react";
-import Link from "next/link";
-import { cn } from "../../utils";
+import { ForwardedRef, HTMLAttributeAnchorTarget, HTMLAttributes, forwardRef } from "react"
+import Link from "next/link"
+import { cn } from "../../utils"
 
-export interface ActionProps
-  extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
-  hover?: boolean;
-  href?: string;
-  target?: HTMLAttributeAnchorTarget;
-  disabled?: boolean;
-  type?: "submit" | "reset" | "button" | undefined;
+export interface ActionProps extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement> {
+  hover?: boolean
+  href?: string
+  target?: HTMLAttributeAnchorTarget
+  disabled?: boolean
+  type?: "submit" | "reset" | "button" | undefined
 }
 
-export const Action = forwardRef<
-  HTMLAnchorElement | HTMLButtonElement,
-  ActionProps
->(function Alert(
-  {
-    hover,
-    href,
-    target,
-    disabled,
-    type,
-    className,
-    children,
-    ...rest
-  }: ActionProps,
-  ref,
+export const Action = forwardRef<HTMLAnchorElement | HTMLButtonElement, ActionProps>(function Alert(
+  { hover, href, target, disabled, type, className, children, ...rest }: ActionProps,
+  ref
 ) {
   return href ? (
     <Link
@@ -52,5 +34,5 @@ export const Action = forwardRef<
     >
       {children}
     </button>
-  );
-});
+  )
+})

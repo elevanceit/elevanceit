@@ -1,6 +1,6 @@
-import { withThemeByClassName } from "@storybook/addon-styling";
-import type { Preview } from "@storybook/react";
-import "../styles/styles.css";
+import { withThemeByClassName } from "@storybook/addon-styling"
+import type { Preview } from "@storybook/react"
+import "../styles/styles.css"
 
 // @ts-ignore
 // @ts-ignore
@@ -30,6 +30,6 @@ const preview: Preview = {
       </div>
     ),
   ],
-};
+}
 
-export default preview;
+export default preview

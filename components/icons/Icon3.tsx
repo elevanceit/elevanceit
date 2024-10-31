@@ -1,14 +1,8 @@
-import * as React from "react";
-import type { SVGProps } from "react";
+import * as React from "react"
+import type { SVGProps } from "react"
+
 const SvgIcon3 = (props: SVGProps<SVGSVGElement>) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewBox="0 0 100 101"
-    {...props}
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 100 101" {...props}>
     <path
       fill="#fff"
       fillRule="evenodd"
@@ -16,5 +10,5 @@ const SvgIcon3 = (props: SVGProps<SVGSVGElement>) => (
       clipRule="evenodd"
     />
   </svg>
-);
-export default SvgIcon3;
+)
+export default SvgIcon3

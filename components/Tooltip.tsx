@@ -1,25 +1,17 @@
-import { HTMLAttributes, ReactNode } from "react";
-import { ALIGN_OPTIONS, SIDE_OPTIONS } from "@radix-ui/react-popper";
-import * as TooltipPrimitive from "@radix-ui/react-tooltip";
-import { cn } from "../utils";
+import { HTMLAttributes, ReactNode } from "react"
+import { ALIGN_OPTIONS, SIDE_OPTIONS } from "@radix-ui/react-popper"
+import * as TooltipPrimitive from "@radix-ui/react-tooltip"
+import { cn } from "../utils"
 
 type Props = TooltipPrimitive.TooltipProps & {
-  trigger: ReactNode;
-  triggerPrimitive?: TooltipPrimitive.TooltipTriggerProps;
-  align?: (typeof ALIGN_OPTIONS)[number];
-  side?: (typeof SIDE_OPTIONS)[number];
+  trigger: ReactNode
+  triggerPrimitive?: TooltipPrimitive.TooltipTriggerProps
+  align?: (typeof ALIGN_OPTIONS)[number]
+  side?: (typeof SIDE_OPTIONS)[number]
   // delayDuration?: number;
-} & HTMLAttributes<HTMLElement>;
+} & HTMLAttributes<HTMLElement>
 
-export const Tooltip = ({
-  trigger,
-  triggerPrimitive,
-  className,
-  align = "center",
-  side,
-  children,
-  ...rest
-}: Props) => {
+export const Tooltip = ({ trigger, triggerPrimitive, className, align = "center", side, children, ...rest }: Props) => {
   return (
     <TooltipPrimitive.Provider>
       <TooltipPrimitive.Root {...rest}>
@@ -38,7 +30,7 @@ export const Tooltip = ({
               "radix-side-left:animate-slide-right-fade",
               "inline-flex items-center rounded-md",
               "shadow-dropdown z-50 bg-white px-2",
-              className,
+              className
             )}
           >
             <TooltipPrimitive.Arrow className="fill-current text-white" />
@@ -47,5 +39,5 @@ export const Tooltip = ({
         </TooltipPrimitive.Portal>
       </TooltipPrimitive.Root>
     </TooltipPrimitive.Provider>
-  );
-};
+  )
+}

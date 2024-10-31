@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from "@storybook/react";
-import { Alert } from ".";
-import { BUTTON_VARIANTS } from "../../enums";
+import type { Meta, StoryObj } from "@storybook/react"
+import { Alert } from "."
+import { BUTTON_VARIANTS } from "../../enums"
 
 const meta: Meta<typeof Alert> = {
   title: "Alert",
@@ -15,12 +15,12 @@ const meta: Meta<typeof Alert> = {
       control: { type: "select" },
     },
   },
-};
+}
 
-type Story = StoryObj<typeof Alert>;
+type Story = StoryObj<typeof Alert>
 
 export const Default: Story = {
   render: (args) => <Alert {...args} />,
-};
+}
 
-export default meta;
+export default meta

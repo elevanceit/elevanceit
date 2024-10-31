@@ -1,6 +1,6 @@
-import { Metadata } from "next";
-import { Servers } from "../components/Servers";
-import { Suspense } from "react";
+import { Suspense } from "react"
+import { Metadata } from "next"
+import { Servers } from "../components/Servers"
 
 export const metadata: Metadata = {
   title: "Elevance Innovation Technology",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
+}
 
 export default function Page() {
   return (
@@ -26,5 +26,5 @@ export default function Page() {
         <Servers />
       </Suspense>
     </section>
-  );
+  )
 }

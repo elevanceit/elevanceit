@@ -1,11 +1,11 @@
-import forms from "@tailwindcss/forms";
-import typography from "@tailwindcss/typography";
-import scrollbar from "tailwind-scrollbar";
-import type { Config } from "tailwindcss";
-import tailwind3d from "tailwindcss-3d";
-import animate from "tailwindcss-animate";
-import radix from "tailwindcss-radix";
-import plugin from "tailwindcss/plugin";
+import forms from "@tailwindcss/forms"
+import typography from "@tailwindcss/typography"
+import scrollbar from "tailwind-scrollbar"
+import type { Config } from "tailwindcss"
+import tailwind3d from "tailwindcss-3d"
+import animate from "tailwindcss-animate"
+import radix from "tailwindcss-radix"
+import plugin from "tailwindcss/plugin"
 
 const config: Config = {
   darkMode: "class",
@@ -179,14 +179,14 @@ const config: Config = {
     tailwind3d,
     radix({}),
     plugin(({ addVariant }) => {
-      addVariant("mac", ".mac &");
-      addVariant("windows", ".windows &");
-      addVariant("ios", ".ios &");
+      addVariant("mac", ".mac &")
+      addVariant("windows", ".windows &")
+      addVariant("ios", ".ios &")
     }),
   ],
   future: {
     hoverOnlyWhenSupported: true,
   },
-};
+}
 
-export default config;
+export default config

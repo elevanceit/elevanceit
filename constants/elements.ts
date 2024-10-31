@@ -43,4 +43,4 @@ export const ELEMENTS: Record<string, Record<string, string>>[] = [
   {
     "Proficient Components": {},
   },
-];
+]

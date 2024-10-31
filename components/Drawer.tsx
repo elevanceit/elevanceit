@@ -1,29 +1,18 @@
-import {
-  CSSProperties,
-  FC,
-  HTMLAttributes,
-  memo,
-  useEffect,
-  useId,
-  useRef,
-} from "react";
-import { cn } from "../utils";
+import { CSSProperties, FC, HTMLAttributes, memo, useEffect, useId, useRef } from "react"
+import { cn } from "../utils"
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  open: boolean;
-  onClose?: () => void;
-  direction: "left" | "right" | "top" | "bottom";
-  lockBackgroundScroll?: boolean;
-  enableOverlay?: boolean;
-  size?: number | string;
-  classNameOverlay?: string;
-  classNameContainer?: string;
+  open: boolean
+  onClose?: () => void
+  direction: "left" | "right" | "top" | "bottom"
+  lockBackgroundScroll?: boolean
+  enableOverlay?: boolean
+  size?: number | string
+  classNameOverlay?: string
+  classNameContainer?: string
 }
 
-const getDirectionStyle = (
-  dir: string,
-  size?: number | string,
-): CSSProperties => {
+const getDirectionStyle = (dir: string, size?: number | string): CSSProperties => {
   switch (dir) {
     case "left":
       return {
@@ -32,7 +21,7 @@ const getDirectionStyle = (
         transform: "translate3d(-100%, 0, 0)",
         width: size,
         height: "100vh",
-      };
+      }
     case "right":
       return {
         top: 0,
@@ -40,7 +29,7 @@ const getDirectionStyle = (
         transform: "translate3d(100%, 0, 0)",
         width: size,
         height: "100vh",
-      };
+      }
     case "bottom":
       return {
         left: 0,
@@ -49,7 +38,7 @@ const getDirectionStyle = (
         transform: "translate3d(0, 100%, 0)",
         width: "100%",
         height: size,
-      };
+      }
     case "top":
       return {
         left: 0,
@@ -58,12 +47,12 @@ const getDirectionStyle = (
         transform: "translate3d(0, -100%, 0)",
         width: "100%",
         height: size,
-      };
+      }
 
     default:
-      return {};
+      return {}
   }
-};
+}
 
 export const Drawer: FC<Props> = memo<Props>(function Drawer({
   open,
@@ -78,17 +67,17 @@ export const Drawer: FC<Props> = memo<Props>(function Drawer({
   classNameOverlay = "",
   ...rest
 }: Props) {
-  const id = useId().replace(/:/g, "");
+  const id = useId().replace(/:/g, "")
 
-  const bodyRef = useRef<HTMLBodyElement | null>(null);
+  const bodyRef = useRef<HTMLBodyElement | null>(null)
 
   useEffect(() => {
-    bodyRef.current = window.document.querySelector("body");
+    bodyRef.current = window.document.querySelector("body")
 
     if (bodyRef.current && lockBackgroundScroll) {
-      bodyRef.current.style.overflow = open ? "hidden" : "auto";
+      bodyRef.current.style.overflow = open ? "hidden" : "auto"
     }
-  }, [open, lockBackgroundScroll]);
+  }, [open, lockBackgroundScroll])
 
   return (
     <>
@@ -111,7 +100,7 @@ export const Drawer: FC<Props> = memo<Props>(function Drawer({
         className={cn(
           "shadow-drawer invisible fixed z-50 bg-white transition-all duration-300",
           open && "visible",
-          className,
+          className
         )}
         {...rest}
       >
@@ -124,10 +113,10 @@ export const Drawer: FC<Props> = memo<Props>(function Drawer({
           className={cn(
             "fixed left-0 top-0 z-40 hidden h-screen w-full bg-[rgba(5,16,54,.4)] opacity-0 transition-all duration-300",
             open && "block opacity-100",
-            classNameOverlay,
+            classNameOverlay
           )}
         />
       )}
     </>
-  );
-});
+  )
+})

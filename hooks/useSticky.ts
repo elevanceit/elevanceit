@@ -1,26 +1,26 @@
-import { useEffect, useMemo, useState } from "react";
-import debounce from "lodash/debounce";
+import { useEffect, useMemo, useState } from "react"
+import debounce from "lodash/debounce"
 
 export const useSticky = ({ offset = 0 }: { offset?: number } = {}) => {
-  const [sticky, setSticky] = useState(false);
+  const [sticky, setSticky] = useState(false)
 
   useEffect(() => {
     const handleStickyNavbar = () => {
       if (!sticky) {
-        setSticky(window.scrollY > offset);
+        setSticky(window.scrollY > offset)
       } else if (window.scrollY === 0) {
-        setSticky(false);
+        setSticky(false)
       }
-    };
+    }
 
-    const handler = debounce(handleStickyNavbar, 0);
+    const handler = debounce(handleStickyNavbar, 0)
 
-    handler();
+    handler()
 
-    window.addEventListener("scroll", handler);
+    window.addEventListener("scroll", handler)
 
-    return () => window.removeEventListener("scroll", handler);
-  }, [sticky, offset]);
+    return () => window.removeEventListener("scroll", handler)
+  }, [sticky, offset])
 
-  return useMemo(() => ({ sticky, setSticky }), [sticky]);
-};
+  return useMemo(() => ({ sticky, setSticky }), [sticky])
+}

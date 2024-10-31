@@ -1,13 +1,13 @@
-import { SelectHTMLAttributes, forwardRef } from "react";
-import { cn } from "../../utils";
+import { SelectHTMLAttributes, forwardRef } from "react"
+import { cn } from "../../utils"
 
 interface Props extends SelectHTMLAttributes<HTMLSelectElement> {
-  readOnly?: boolean;
+  readOnly?: boolean
 }
 
 export const Select = forwardRef<HTMLSelectElement, Props>(function Select(
   { style, className, children, readOnly, ...rest }: Props,
-  ref,
+  ref
 ) {
   return (
     <select
@@ -16,11 +16,11 @@ export const Select = forwardRef<HTMLSelectElement, Props>(function Select(
       className={cn(
         "bg-ruined-smores placeholder:text-midnight-magic border-midnight-magic hover:border-nila-blue focus:border-nila-blue rounded-lg px-5 py-3.5 transition-all duration-300",
         readOnly && "appearance-none border-transparent bg-none",
-        className,
+        className
       )}
       {...rest}
     >
       {children}
     </select>
-  );
-});
+  )
+})

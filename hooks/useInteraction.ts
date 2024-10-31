@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 
 /**
  * Check if the user has interacted with the current page.
@@ -8,24 +8,24 @@ import { useEffect, useState } from "react";
  * @returns A boolean indicating whether the user has interacted with the page (`true`) or not (`false`).
  */
 export function useInteraction() {
-  const [interaction, setInteraction] = useState(false);
+  const [interaction, setInteraction] = useState(false)
 
   useEffect(() => {
     const handleMove = () => {
-      window.removeEventListener("mousemove", handleMove);
-      window.removeEventListener("touchmove", handleMove);
+      window.removeEventListener("mousemove", handleMove)
+      window.removeEventListener("touchmove", handleMove)
 
-      setInteraction(true);
-    };
+      setInteraction(true)
+    }
 
-    window.addEventListener("mousemove", handleMove);
-    window.addEventListener("touchmove", handleMove);
+    window.addEventListener("mousemove", handleMove)
+    window.addEventListener("touchmove", handleMove)
 
     return () => {
-      window.removeEventListener("mousemove", handleMove);
-      window.removeEventListener("touchmove", handleMove);
-    };
-  }, []);
+      window.removeEventListener("mousemove", handleMove)
+      window.removeEventListener("touchmove", handleMove)
+    }
+  }, [])
 
-  return interaction;
+  return interaction
 }

@@ -1,32 +1,22 @@
-import {
-  ForwardedRef,
-  HTMLAttributeAnchorTarget,
-  HTMLAttributes,
-  forwardRef,
-} from "react";
-import Link from "next/link";
-import { VariantProps } from "tailwind-variants";
-import { cn } from "../../utils";
-import { ButtonTheme } from "./theme";
+import { ForwardedRef, HTMLAttributeAnchorTarget, HTMLAttributes, forwardRef } from "react"
+import Link from "next/link"
+import { VariantProps } from "tailwind-variants"
+import { cn } from "../../utils"
+import { ButtonTheme } from "./theme"
 
 export interface ButtonVariants extends VariantProps<typeof ButtonTheme> {}
 
-export interface ButtonProps
-  extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>,
-    ButtonVariants {
-  hover?: boolean;
-  href?: string;
-  target?: HTMLAttributeAnchorTarget;
-  rounded?: boolean;
-  outline?: boolean;
-  disabled?: boolean;
-  type?: "submit" | "reset" | "button" | undefined;
+export interface ButtonProps extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>, ButtonVariants {
+  hover?: boolean
+  href?: string
+  target?: HTMLAttributeAnchorTarget
+  rounded?: boolean
+  outline?: boolean
+  disabled?: boolean
+  type?: "submit" | "reset" | "button" | undefined
 }
 
-export const Button = forwardRef<
-  HTMLAnchorElement | HTMLButtonElement,
-  ButtonProps
->(function Button(
+export const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, ButtonProps>(function Button(
   {
     hover,
     href,
@@ -41,7 +31,7 @@ export const Button = forwardRef<
     type,
     ...rest
   }: ButtonProps,
-  ref,
+  ref
 ) {
   return href ? (
     <Link
@@ -49,12 +39,7 @@ export const Button = forwardRef<
       ref={ref as ForwardedRef<HTMLAnchorElement>}
       href={href}
       target={target}
-      className={cn(
-        "relative",
-        ButtonTheme({ variant, dark, outline }),
-        rounded && "rounded-full",
-        className,
-      )}
+      className={cn("relative", ButtonTheme({ variant, dark, outline }), rounded && "rounded-full", className)}
       {...rest}
     >
       {children}
@@ -65,15 +50,10 @@ export const Button = forwardRef<
       type={type}
       ref={ref as ForwardedRef<HTMLButtonElement>}
       disabled={disabled}
-      className={cn(
-        "relative",
-        ButtonTheme({ variant, dark, outline }),
-        rounded && "rounded-full",
-        className,
-      )}
+      className={cn("relative", ButtonTheme({ variant, dark, outline }), rounded && "rounded-full", className)}
       {...rest}
     >
       {children}
     </button>
-  );
-});
+  )
+})

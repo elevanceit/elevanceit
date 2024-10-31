@@ -1,6 +1,4 @@
-import { Options } from "prettier";
-
-const config: Options = {
+module.exports = {
   proseWrap: "always",
   tailwindConfig: "./tailwind.config.ts",
   importOrder: [
@@ -33,6 +31,4 @@ const config: Options = {
       },
     },
   ],
-};
-
-export default config;
+}

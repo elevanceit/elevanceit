@@ -1,33 +1,22 @@
-import {
-  CSSProperties,
-  FC,
-  HTMLAttributes,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import { useInView } from "react-intersection-observer";
-import { AnimationProps, Spring, animated } from "@react-spring/web";
-import { cn } from "../utils";
+import { CSSProperties, FC, HTMLAttributes, useCallback, useEffect, useRef, useState } from "react"
+import { useInView } from "react-intersection-observer"
+import { AnimationProps, Spring, animated } from "@react-spring/web"
+import { cn } from "../utils"
 
-const NUMBERS = [
-  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5,
-  6, 7, 8, 9,
-];
+const NUMBERS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 function getRandomIntInclusive(min: number, max: number) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  min = Math.ceil(min)
+  max = Math.floor(max)
+  return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  value: number;
-  styles?: CSSProperties;
-  configs?: AnimationProps["config"];
-  comma?: boolean;
-  locale?: string;
+  value: number
+  styles?: CSSProperties
+  configs?: AnimationProps["config"]
+  comma?: boolean
+  locale?: string
 }
 
 export const AnimatedNumber: FC<Props> = ({
@@ -39,63 +28,43 @@ export const AnimatedNumber: FC<Props> = ({
   className,
   ...rest
 }) => {
-  const { ref, inView } = useInView({ triggerOnce: true });
+  const { ref, inView } = useInView({ triggerOnce: true })
 
-  const keyCount = useRef(0);
+  const keyCount = useRef(0)
 
-  const animationString = comma
-    ? Math.abs(value).toLocaleString(locale || "en-US")
-    : String(Math.abs(value));
+  const animationString = comma ? Math.abs(value).toLocaleString(locale || "en-US") : String(Math.abs(value))
 
-  const valuesArr: (number | string)[] = Array.from(
-    animationString,
-    Number,
-  ).map((x, idx) => (isNaN(x) ? animationString[idx] : x)) as (
-    | number
-    | string
-  )[];
+  const valuesArr: (number | string)[] = Array.from(animationString, Number).map((x, idx) =>
+    isNaN(x) ? animationString[idx] : x
+  ) as (number | string)[]
 
-  const [numberHeight, setNumberHeight] = useState(0);
+  const [numberHeight, setNumberHeight] = useState(0)
 
-  const numberDivRef = useRef<HTMLDivElement | null>(null);
+  const numberDivRef = useRef<HTMLDivElement | null>(null)
 
-  const setConfig = useCallback(
-    (configs: any, number: number | string, index: number) => {
-      if (typeof configs === "function") {
-        return configs(number, index);
-      }
-      return configs
-        ? configs[getRandomIntInclusive(0, configs.length - 1)]
-        : undefined;
-    },
-    [],
-  );
+  const setConfig = useCallback((configs: any, number: number | string, index: number) => {
+    if (typeof configs === "function") {
+      return configs(number, index)
+    }
+    return configs ? configs[getRandomIntInclusive(0, configs.length - 1)] : undefined
+  }, [])
 
   useEffect(() => {
-    const height = numberDivRef.current?.getClientRects()?.[0]?.height || 0;
+    const height = numberDivRef.current?.getClientRects()?.[0]?.height || 0
     if (height) {
-      setNumberHeight(height);
+      setNumberHeight(height)
     }
-  }, [value, styles]);
+  }, [value, styles])
 
   if (!numberHeight)
     return (
-      <div
-        ref={numberDivRef}
-        style={styles}
-        className={cn("absolute top-[-9999]", className)}
-        {...rest}
-      >
+      <div ref={numberDivRef} style={styles} className={cn("absolute top-[-9999]", className)} {...rest}>
         {0}
       </div>
-    );
+    )
 
   return (
-    <div
-      ref={ref}
-      className={cn("animated-container flex", className)}
-      {...rest}
-    >
+    <div ref={ref} className={cn("animated-container flex", className)} {...rest}>
       {inView && value < 0 && <div style={styles}>-</div>}
       {inView &&
         valuesArr.map((n, index) => {
@@ -104,7 +73,7 @@ export const AnimatedNumber: FC<Props> = ({
               <div key={index} style={{ ...styles }}>
                 {n}
               </div>
-            );
+            )
           }
 
           return (
@@ -134,8 +103,8 @@ export const AnimatedNumber: FC<Props> = ({
                 }
               </Spring>
             </div>
-          );
+          )
         })}
     </div>
-  );
-};
+  )
+}

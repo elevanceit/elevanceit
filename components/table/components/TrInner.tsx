@@ -1,26 +1,20 @@
-import {
-  Children,
-  FC,
-  HTMLAttributes,
-  ReactElement,
-  cloneElement,
-} from "react";
+import { Children, FC, HTMLAttributes, ReactElement, cloneElement } from "react"
 
 interface Props extends HTMLAttributes<HTMLTableRowElement> {
   data: {
-    headers: Record<string, string>;
-    pivot?: HTMLAttributes<HTMLDivElement>;
-  };
-  inside?: boolean;
+    headers: Record<string, string>
+    pivot?: HTMLAttributes<HTMLDivElement>
+  }
+  inside?: boolean
 }
 
 export const TrInner: FC<Props> = ({ children, data, inside, ...rest }) => {
   if (data.headers && inside) {
     Children.forEach(children, (child, i) => {
       if (child) {
-        data.headers[i] = (child as ReactElement).props.children;
+        data.headers[i] = (child as ReactElement).props.children
       }
-    });
+    })
   }
 
   return (
@@ -32,8 +26,8 @@ export const TrInner: FC<Props> = ({ children, data, inside, ...rest }) => {
                 key: i,
                 column: i,
               })
-            : null,
+            : null
         )}
     </tr>
-  );
-};
+  )
+}

@@ -1,14 +1,8 @@
-import * as React from "react";
-import type { SVGProps } from "react";
+import * as React from "react"
+import type { SVGProps } from "react"
+
 const SvgIcon6 = (props: SVGProps<SVGSVGElement>) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    fill="none"
-    viewBox="0 0 100 101"
-    {...props}
-  >
+  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 100 101" {...props}>
     <g clipPath="url(#icon6_svg__a)">
       <path
         fill="#fff"
@@ -23,5 +17,5 @@ const SvgIcon6 = (props: SVGProps<SVGSVGElement>) => (
       </clipPath>
     </defs>
   </svg>
-);
-export default SvgIcon6;
+)
+export default SvgIcon6

@@ -1,11 +1,11 @@
-import { HTMLAttributes, useEffect, useId } from "react";
-import PhotoSwipeLightbox from "photoswipe/lightbox";
-import { cn } from "../utils";
+import { HTMLAttributes, useEffect, useId } from "react"
+import PhotoSwipeLightbox from "photoswipe/lightbox"
+import { cn } from "../utils"
 
 interface Props extends HTMLAttributes<HTMLDivElement> {}
 
 export const PhotoSwipe = ({ className, children, ...rest }: Props) => {
-  const id = useId().replace(/:/g, "");
+  const id = useId().replace(/:/g, "")
 
   useEffect(() => {
     const lightbox = new PhotoSwipeLightbox({
@@ -15,22 +15,18 @@ export const PhotoSwipe = ({ className, children, ...rest }: Props) => {
       zoom: true,
       loop: true,
       showAnimationDuration: 200,
-    });
+    })
 
-    lightbox.init();
+    lightbox.init()
 
     return () => {
-      lightbox.destroy();
-    };
-  }, [id]);
+      lightbox.destroy()
+    }
+  }, [id])
 
   return (
-    <div
-      id={id}
-      className={cn("transition-none duration-0 transform-none", className)}
-      {...rest}
-    >
+    <div id={id} className={cn("transition-none duration-0 transform-none", className)} {...rest}>
       {children}
     </div>
-  );
-};
+  )
+}

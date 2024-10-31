@@ -1,14 +1,8 @@
-import {
-  Fragment,
-  HTMLAttributes,
-  type ReactNode,
-  memo,
-  useCallback,
-} from "react";
-import { Jost } from "next/font/google";
-import { Transition } from "@headlessui/react";
-import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { cn } from "../../utils";
+import { Fragment, HTMLAttributes, type ReactNode, memo, useCallback } from "react"
+import { Jost } from "next/font/google"
+import { Transition } from "@headlessui/react"
+import * as DialogPrimitive from "@radix-ui/react-dialog"
+import { cn } from "../../utils"
 
 const jost = Jost({
   weight: ["400", "500", "600", "700"],
@@ -16,18 +10,18 @@ const jost = Jost({
   subsets: ["latin"],
   display: "block",
   variable: "--font-inter",
-});
+})
 
 interface Props
   extends Omit<HTMLAttributes<HTMLDivElement>, "title">,
     Omit<DialogPrimitive.DialogContentProps, "title"> {
-  title?: ReactNode;
-  titleClassName?: string;
-  classNameClose?: string;
-  open?: boolean;
-  onOpenChange?: (open: boolean) => void;
-  modal?: boolean;
-  hideCloseButton?: boolean;
+  title?: ReactNode
+  titleClassName?: string
+  classNameClose?: string
+  open?: boolean
+  onOpenChange?: (open: boolean) => void
+  modal?: boolean
+  hideCloseButton?: boolean
 }
 
 export const Dialog = memo(function Dialog({
@@ -45,12 +39,12 @@ export const Dialog = memo(function Dialog({
   const avoidDefaultDomBehavior = useCallback(
     (event: Event) => {
       if (modal) {
-        event.preventDefault();
-        event.stopPropagation();
+        event.preventDefault()
+        event.stopPropagation()
       }
     },
-    [modal],
-  );
+    [modal]
+  )
 
   return (
     <DialogPrimitive.Root open={open} onOpenChange={onOpenChange} modal={modal}>
@@ -86,7 +80,7 @@ export const Dialog = memo(function Dialog({
               className={cn(
                 "border-resplendent-growth fixed left-[50%] top-[50%] z-50 flex max-h-full w-full flex-col overflow-y-auto overflow-x-hidden rounded-[2px] border-[3px] bg-black -translate-x-[50%] -translate-y-[50%]",
                 jost.className,
-                className,
+                className
               )}
               {...rest}
             >
@@ -94,16 +88,14 @@ export const Dialog = memo(function Dialog({
                 <DialogPrimitive.DialogTitle
                   className={cn(
                     "font-ocrx text-lightish-green bg-resplendent-growth relative ml-[-3px] mr-[-3px] mt-[-3px] flex h-[46px] min-h-[46px] items-center rounded-[2px] px-[2px] py-[3px] text-2xl",
-                    titleClassName,
+                    titleClassName
                   )}
                 >
                   <div
                     style={{
                       boxShadow: `1.84px 1.84px 1.84px 0px rgba(0, 0, 0, 0.91) inset, -1.84px -0.92px 3.69px 0px rgba(215, 215, 215, 0.18) inset`,
                     }}
-                    className={cn(
-                      "bg-chestnut-green flex h-full w-full items-center rounded-[2px] px-4",
-                    )}
+                    className={cn("bg-chestnut-green flex h-full w-full items-center rounded-[2px] px-4")}
                   >
                     {title}
                   </div>
@@ -116,19 +108,17 @@ export const Dialog = memo(function Dialog({
                   }}
                   className={cn(
                     "font-ocrx disabled:bg-nori-green hover:bg-mermaid-tail disabled:text-jungle-jam bg-bialowieza-forest text-lightish-green absolute right-[4px] top-[4px] inline-flex h-[32px] min-h-[32px] w-[30px] min-w-[30px] items-center justify-center overflow-hidden rounded-[2px] text-3xl transition-all duration-300 hover:scale-105 disabled:cursor-not-allowed disabled:hover:scale-100",
-                    classNameClose,
+                    classNameClose
                   )}
                 >
                   X
                 </DialogPrimitive.Close>
               )}
-              <div className="h-full overflow-y-auto overflow-x-hidden">
-                {children}
-              </div>
+              <div className="h-full overflow-y-auto overflow-x-hidden">{children}</div>
             </DialogPrimitive.Content>
           </Transition.Child>
         </Transition.Root>
       </DialogPrimitive.Portal>
     </DialogPrimitive.Root>
-  );
-});
+  )
+})

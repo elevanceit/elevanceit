@@ -1,15 +1,15 @@
-import { ReactNode, useId } from "react";
-import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
-import { ALIGN_OPTIONS } from "@radix-ui/react-popper";
-import { cn } from "../utils";
+import { ReactNode, useId } from "react"
+import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu"
+import { ALIGN_OPTIONS } from "@radix-ui/react-popper"
+import { cn } from "../utils"
 
 type Props = DropdownMenuPrimitive.DropdownMenuProps & {
-  trigger: ReactNode;
-  triggerPrimitive?: DropdownMenuPrimitive.DropdownMenuTriggerProps;
-  align?: (typeof ALIGN_OPTIONS)[number];
-  offset?: number;
-  content?: DropdownMenuPrimitive.DropdownMenuContentProps;
-};
+  trigger: ReactNode
+  triggerPrimitive?: DropdownMenuPrimitive.DropdownMenuTriggerProps
+  align?: (typeof ALIGN_OPTIONS)[number]
+  offset?: number
+  content?: DropdownMenuPrimitive.DropdownMenuContentProps
+}
 
 export const Dropdown = ({
   trigger,
@@ -20,7 +20,7 @@ export const Dropdown = ({
   children,
   ...rest
 }: Props) => {
-  const id = useId();
+  const id = useId()
 
   return (
     <DropdownMenuPrimitive.Root {...rest}>
@@ -38,5 +38,5 @@ export const Dropdown = ({
         </DropdownMenuPrimitive.Content>
       </DropdownMenuPrimitive.Portal>
     </DropdownMenuPrimitive.Root>
-  );
-};
+  )
+}

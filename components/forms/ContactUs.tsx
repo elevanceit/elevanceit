@@ -1,18 +1,18 @@
-import { HTMLAttributes, useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import toast from "react-hot-toast";
-import { faSpinnerThird } from "@fortawesome/pro-duotone-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { useGoogleReCaptcha } from "../../hooks/useGoogleReCaptcha";
-import { cn } from "../../utils";
-import { Button } from "../Button";
-import { Form } from "../Form";
-import { Field } from "../controls/Field";
+import { HTMLAttributes, useState } from "react"
+import { SubmitHandler, useForm } from "react-hook-form"
+import toast from "react-hot-toast"
+import { faSpinnerThird } from "@fortawesome/pro-duotone-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { z } from "zod"
+import { useGoogleReCaptcha } from "../../hooks/useGoogleReCaptcha"
+import { cn } from "../../utils"
+import { Button } from "../Button"
+import { Form } from "../Form"
+import { Field } from "../controls/Field"
 
 interface Props extends HTMLAttributes<HTMLFormElement> {
-  onComplete?: () => void;
+  onComplete?: () => void
 }
 
 const validationSchema = z.object({
@@ -25,21 +25,21 @@ const validationSchema = z.object({
   terms: z.literal(true, {
     errorMap: () => ({ message: "You must accept Terms and Conditions" }),
   }),
-});
+})
 
-type ValidationSchema = z.infer<typeof validationSchema>;
+type ValidationSchema = z.infer<typeof validationSchema>
 
 const subjects = {
   partnership: "Partnership",
   press: "Press",
   general_inquiry: "General Inquiry",
   job_application: "Job Application",
-};
+}
 
 export function ContactUs({ onComplete, className, ...rest }: Props) {
-  const [submitting, setSubmitting] = useState(false);
+  const [submitting, setSubmitting] = useState(false)
 
-  const { execute, executing } = useGoogleReCaptcha();
+  const { execute, executing } = useGoogleReCaptcha()
 
   const {
     register,
@@ -48,7 +48,7 @@ export function ContactUs({ onComplete, className, ...rest }: Props) {
     formState: { errors },
   } = useForm<ValidationSchema>({
     resolver: zodResolver(validationSchema),
-  });
+  })
 
   // const contactUs = trpc.web.forms.contactUs.useMutation({
   //   async onSuccess() {
@@ -62,7 +62,7 @@ export function ContactUs({ onComplete, className, ...rest }: Props) {
   // })
 
   const onSubmit: SubmitHandler<ValidationSchema> = async (data) => {
-    if (!execute) return;
+    if (!execute) return
 
     // contactUs.mutate({
     //   token: await execute(),
@@ -71,16 +71,12 @@ export function ContactUs({ onComplete, className, ...rest }: Props) {
     //   subject: data.subject,
     //   message: data.message,
     // })
-  };
+  }
 
-  const isLoading = submitting || executing; // || contactUs.isLoading
+  const isLoading = submitting || executing // || contactUs.isLoading
 
   return (
-    <Form
-      className={cn("flex flex-col gap-4", className)}
-      onSubmit={handleSubmit(onSubmit)}
-      {...rest}
-    >
+    <Form className={cn("flex flex-col gap-4", className)} onSubmit={handleSubmit(onSubmit)} {...rest}>
       <div className="text-xl font-bold">Send a message</div>
 
       <div className="-mx-4 flex flex-wrap">
@@ -130,14 +126,9 @@ export function ContactUs({ onComplete, className, ...rest }: Props) {
       <div>
         <Button type="submit" color="secondary" disabled={isLoading}>
           <span className={cn(isLoading && "invisible")}>Send Message</span>
-          {isLoading && (
-            <FontAwesomeIcon
-              icon={faSpinnerThird}
-              className="absolute size-4 animate-spin"
-            />
-          )}
+          {isLoading && <FontAwesomeIcon icon={faSpinnerThird} className="absolute size-4 animate-spin" />}
         </Button>
       </div>
     </Form>
-  );
+  )
 }

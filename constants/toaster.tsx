@@ -1,6 +1,6 @@
-import { ToasterProps } from "react-hot-toast";
-import { faSpinnerThird } from "@fortawesome/pro-duotone-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ToasterProps } from "react-hot-toast"
+import { faSpinnerThird } from "@fortawesome/pro-duotone-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export const toaster: ToasterProps = {
   containerClassName: "",
@@ -40,16 +40,11 @@ export const toaster: ToasterProps = {
         background: "var(--color-acorn)",
         color: "var(--color-armor)",
       },
-      icon: (
-        <FontAwesomeIcon
-          icon={faSpinnerThird}
-          className="text-acorn h-[20px] w-[20px] animate-spin"
-        />
-      ),
+      icon: <FontAwesomeIcon icon={faSpinnerThird} className="text-acorn h-[20px] w-[20px] animate-spin" />,
       iconTheme: {
         primary: "var(--color-armor)",
         secondary: "var(--color-acorn)",
       },
     },
   },
-};
+}

@@ -1,22 +1,17 @@
-import { ReactNode } from "react";
-import { Montserrat } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
-import { NuqsAdapter } from "nuqs/adapters/next/app";
-import "styles/styles.css";
-import { Call2Action } from "../components/Call2Action";
-import { Cursor } from "../components/Cursor";
-import { Preloader } from "../components/Preloader";
-import { ToTop } from "../components/ToTop";
-import {
-  HAS_CALL2ACTION,
-  HAS_CURSOR,
-  HAS_PRELOADER,
-  HAS_TOTOP,
-} from "../constants";
-import { ThemeProvider } from "../providers/theme";
-import { cn } from "../utils";
-import { TRPCProvider } from "../providers/trpc";
-import { ProgressProviders } from "../providers/progress";
+import { ReactNode } from "react"
+import { Montserrat } from "next/font/google"
+import { ClerkProvider } from "@clerk/nextjs"
+import { NuqsAdapter } from "nuqs/adapters/next/app"
+import { Call2Action } from "../components/Call2Action"
+import { Cursor } from "../components/Cursor"
+import { Preloader } from "../components/Preloader"
+import { ToTop } from "../components/ToTop"
+import { HAS_CALL2ACTION, HAS_CURSOR, HAS_PRELOADER, HAS_TOTOP } from "../constants"
+import { ProgressProviders } from "../providers/progress"
+import { ThemeProvider } from "../providers/theme"
+import { TRPCProvider } from "../providers/trpc"
+import { cn } from "../utils"
+import "./styles/styles.css"
 
 // import {usePathname} from "next/navigation";
 
@@ -26,20 +21,14 @@ const font = Montserrat({
   subsets: ["latin"],
   display: "block",
   variable: "--font-inter",
-});
+})
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   // const pathname = usePathname()
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          font.className,
-          "group/page relative min-h-screen antialiased",
-          "flex w-full flex-col",
-        )}
-      >
+      <body className={cn(font.className, "group/page relative min-h-screen antialiased", "flex w-full flex-col")}>
         {HAS_PRELOADER && <Preloader />}
 
         <ClerkProvider
@@ -64,12 +53,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           }}
         >
           <TRPCProvider>
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
-            >
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
               <NuqsAdapter>
                 <ProgressProviders>
                   {HAS_CURSOR && <Cursor />}
@@ -86,5 +70,5 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </ClerkProvider>
       </body>
     </html>
-  );
+  )
 }

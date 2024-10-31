@@ -1,23 +1,20 @@
-import { HTMLAttributes, InputHTMLAttributes, forwardRef } from "react";
-import { cn } from "../../utils";
-import { Input } from "./Input";
+import { HTMLAttributes, InputHTMLAttributes, forwardRef } from "react"
+import { cn } from "../../utils"
+import { Input } from "./Input"
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {}
 
-export const File = forwardRef<HTMLInputElement, Props>(function File(
-  { style, className, ...rest }: Props,
-  ref,
-) {
+export const File = forwardRef<HTMLInputElement, Props>(function File({ style, className, ...rest }: Props, ref) {
   return (
     <Input
       ref={ref}
       style={{ "--tw-ring-color": "var(--color-nila-blue)", ...style }}
       className={cn(
         "file:hover:bg-nila-blue h-[54px] cursor-pointer pb-0 pl-0 pt-0 file:mr-3.5 file:cursor-pointer file:border-0 file:bg-white file:px-5 file:py-3.5 file:text-black file:hover:text-white",
-        className,
+        className
       )}
       type="file"
       {...rest}
     />
-  );
-});
+  )
+})

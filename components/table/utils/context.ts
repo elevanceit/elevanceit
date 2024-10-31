@@ -1,11 +1,11 @@
-import { HTMLAttributes, createContext } from "react";
+import { HTMLAttributes, createContext } from "react"
 
 const { Provider, Consumer } = createContext<{
-  headers: Record<string, string>;
-  pivot?: HTMLAttributes<HTMLDivElement>;
+  headers: Record<string, string>
+  pivot?: HTMLAttributes<HTMLDivElement>
 }>({
   headers: {},
   pivot: undefined,
-});
+})
 
-export { Consumer, Provider };
+export { Consumer, Provider }

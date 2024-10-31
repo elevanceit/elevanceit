@@ -1,5 +1,5 @@
-import React from "react";
-import { Button } from "../components/Button";
+import React from "react"
+import { Button } from "../components/Button"
 
 export default function NotFound() {
   return (
@@ -14,5 +14,5 @@ export default function NotFound() {
 
       <Button href="/">Go Back Home</Button>
     </div>
-  );
+  )
 }
