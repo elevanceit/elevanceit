@@ -138,6 +138,7 @@
     "nanoid": "5.0.8",
     "next": "15.0.2",
     "next-compose-plugins": "2.2.1",
+    "next-nprogress-bar": "^2.3.14",
     "next-seo": "6.6.0",
     "next-sitemap": "4.2.3",
     "next-themes": "0.3.0",

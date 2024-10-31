@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { Servers } from "../components/Servers";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Elevance Innovation Technology",
@@ -21,7 +22,9 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <section className="">
-      <Servers />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Servers />
+      </Suspense>
     </section>
   );
 }

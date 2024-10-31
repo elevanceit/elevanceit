@@ -22,7 +22,6 @@ const nextConfig = withPlugins(
         fullUrl: true,
       },
     },
-    experimental: { instrumentationHook: true },
     rewrites() {
       return [
         { source: "/healthz", destination: "/api/health" },

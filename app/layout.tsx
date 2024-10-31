@@ -16,6 +16,7 @@ import {
 import { ThemeProvider } from "../providers/theme";
 import { cn } from "../utils";
 import { TRPCProvider } from "../providers/trpc";
+import { ProgressProviders } from "../providers/progress";
 
 // import {usePathname} from "next/navigation";
 
@@ -70,13 +71,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               disableTransitionOnChange
             >
               <NuqsAdapter>
-                {HAS_CURSOR && <Cursor />}
+                <ProgressProviders>
+                  {HAS_CURSOR && <Cursor />}
 
-                {HAS_TOTOP && <ToTop />}
+                  {HAS_TOTOP && <ToTop />}
 
-                {HAS_CALL2ACTION && <Call2Action />}
+                  {HAS_CALL2ACTION && <Call2Action />}
 
-                {children}
+                  {children}
+                </ProgressProviders>
               </NuqsAdapter>
             </ThemeProvider>
           </TRPCProvider>
