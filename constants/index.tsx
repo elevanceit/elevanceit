@@ -1,6 +1,6 @@
 export const WEBSITE = {
-  url: process.env.NEXT_PUBLIC_URL,
-  image: `${process.env.NEXT_PUBLIC_URL}/image.png`,
+  url: process.env.NEXT_PUBLIC_APP_URL,
+  image: `${process.env.NEXT_PUBLIC_APP_URL}/image.png`,
   color: "#000",
   name: "Elevance Innovation Technology",
   title: "Elevance Innovation Technology",

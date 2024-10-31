@@ -69,13 +69,10 @@ export const Banner: FC<Props> = ({
         />
       )}
       {gradient && (
-        <div
-          style={{ background: gradient }}
-          className="absolute inset-0 left-0 top-0"
-        />
+        <div style={{ background: gradient }} className="absolute inset-0" />
       )}
 
-      <div className="absolute inset-0 left-0 top-0">{children}</div>
+      <div className="absolute inset-0">{children}</div>
     </button>
   );
 };
