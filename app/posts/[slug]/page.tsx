@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import { getAllPosts, getPostBySlug } from "../../../utils/posts";
 import { markdownToHtml } from "../../../utils/markdowns";
 
+// https://github.com/vercel/next.js/tree/canary/examples/blog-starter
+// https://next-blog-starter.vercel.app/
+
 type Params = {
   params: Promise<{
     slug: string;
