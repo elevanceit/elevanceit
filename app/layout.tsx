@@ -11,7 +11,7 @@ import { ProgressProviders } from "../providers/progress"
 import { ThemeProvider } from "../providers/theme"
 import { TRPCProvider } from "../providers/trpc"
 import { cn } from "../utils"
-import "./styles/styles.css"
+import "../styles/styles.css"
 
 // import {usePathname} from "next/navigation";
 
