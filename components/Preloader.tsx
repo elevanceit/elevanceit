@@ -87,7 +87,7 @@ export function Preloader({ nonce, className, ...rest }: Props) {
       )}
       {...rest}
     >
-      <style nonce={nonce} jsx>{`
+      <style nonce={nonce}>{`
         .loader {
           width: 48px;
           height: 48px;

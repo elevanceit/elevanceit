@@ -1,5 +1,6 @@
 import {
   CSSProperties,
+  FC,
   HTMLAttributes,
   memo,
   useEffect,
@@ -15,7 +16,6 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   lockBackgroundScroll?: boolean;
   enableOverlay?: boolean;
   size?: number | string;
-  customIdSuffix?: string;
   classNameOverlay?: string;
   classNameContainer?: string;
 }
@@ -65,7 +65,7 @@ const getDirectionStyle = (
   }
 };
 
-export const Drawer = memo<Props>(function Drawer({
+export const Drawer: FC<Props> = memo<Props>(function Drawer({
   open,
   onClose = () => {},
   children,
@@ -74,11 +74,10 @@ export const Drawer = memo<Props>(function Drawer({
   size = 250,
   className,
   style,
-  customIdSuffix,
   lockBackgroundScroll = false,
   classNameOverlay = "",
   ...rest
-}) {
+}: Props) {
   const id = useId().replace(/:/g, "");
 
   const bodyRef = useRef<HTMLBodyElement | null>(null);
