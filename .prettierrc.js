@@ -12,6 +12,7 @@ module.exports = {
   ],
   importOrderSeparation: false,
   importOrderSortSpecifiers: true,
+  importOrderParserPlugins: ["typescript", "jsx", "decorators"],
   plugins: [
     "prettier-plugin-tailwindcss",
     "prettier-plugin-prisma",
