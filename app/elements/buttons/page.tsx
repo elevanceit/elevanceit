@@ -33,7 +33,7 @@ export default function Page() {
         <Card header="Default">
           <div className="flex flex-wrap gap-3">
             {Object.entries(BUTTON_VARIANTS).map(([key, value]) => (
-              <Button className="text-sm capitalize" key={key} variant={value}>
+              <Button className="text-sm capitalize" key={key}>
                 {value}
               </Button>
             ))}
@@ -46,12 +46,7 @@ export default function Page() {
         <Card header="Light">
           <div className="flex flex-wrap gap-3">
             {Object.entries(BUTTON_VARIANTS).map(([key, value]) => (
-              <Button
-                dark={false}
-                className="text-sm capitalize"
-                key={key}
-                variant={value}
-              >
+              <Button dark={false} className="text-sm capitalize" key={key}>
                 {value}
               </Button>
             ))}
@@ -62,12 +57,7 @@ export default function Page() {
       <Card header="Outline">
         <div className="flex flex-wrap gap-3">
           {Object.entries(BUTTON_VARIANTS).map(([key, value]) => (
-            <Button
-              className="text-sm capitalize"
-              key={key}
-              variant={value}
-              outline
-            >
+            <Button className="text-sm capitalize" key={key} outline>
               {value}
             </Button>
           ))}

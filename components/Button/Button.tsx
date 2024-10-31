@@ -45,7 +45,7 @@ export const Button = forwardRef<
 ) {
   return href ? (
     <Link
-      role="alert"
+      role="link"
       ref={ref as ForwardedRef<HTMLAnchorElement>}
       href={href}
       target={target}
@@ -61,7 +61,7 @@ export const Button = forwardRef<
     </Link>
   ) : (
     <button
-      role="alert"
+      role="button"
       type={type}
       ref={ref as ForwardedRef<HTMLButtonElement>}
       disabled={disabled}

@@ -42,6 +42,7 @@ const Icons: Record<ALERT_VARIANTS, IconProp> = {
   [ALERT_VARIANTS.WARNING]: faTriangleExclamation,
   [ALERT_VARIANTS.INFO]: faCircleInfo,
   [ALERT_VARIANTS.DARK]: faBell,
+  [ALERT_VARIANTS.LIGHT]: faBell,
 };
 
 export default function Page() {
