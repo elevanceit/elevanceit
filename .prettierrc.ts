@@ -1,6 +1,8 @@
-module.exports = {
+import { Options } from "prettier";
+
+const config: Options = {
   proseWrap: "always",
-  tailwindConfig: "./tailwind.config.js",
+  tailwindConfig: "./tailwind.config.ts",
   importOrder: [
     "^server-only$",
     "^react(.*)$",
@@ -19,4 +21,18 @@ module.exports = {
     // "prettier-plugin-organize-imports",
     "@trivago/prettier-plugin-sort-imports",
   ],
+  trailingComma: "es5",
+  tabWidth: 2,
+  printWidth: 120,
+  semi: false,
+  overrides: [
+    {
+      files: "*.svg",
+      options: {
+        parser: "html",
+      },
+    },
+  ],
 };
+
+export default config;

@@ -88,7 +88,7 @@ export default function Page() {
                 variant={value}
               >
                 You should check in on some of those fields below.
-                <button className="absolute right-2 top-2 flex size-7 items-center justify-center rounded bg-transparent bg-opacity-10 text-inherit hover:bg-inherit">
+                <button className="absolute right-2 top-2 flex size-7 items-center justify-center rounded text-inherit hover:bg-inherit">
                   <FontAwesomeIcon icon={faClose} className="size-4" />
                 </button>
               </Alert>

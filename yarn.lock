@@ -14085,7 +14085,7 @@ __metadata:
     eslint-plugin-security: "npm:3.0.1"
     eslint-plugin-sonarjs: "npm:2.0.4"
     eslint-plugin-storybook: "npm:0.10.1"
-    eslint-plugin-tailwindcss: "npm:3.17.5"
+    eslint-plugin-tailwindcss: "npm:^3.17.5"
     eslint-plugin-turbo: "npm:2.2.3"
     eslint-plugin-unused-imports: "npm:4.1.4"
     fetch-mock: "npm:12.0.2"
@@ -15222,7 +15222,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-tailwindcss@npm:3.17.5":
+"eslint-plugin-tailwindcss@npm:^3.17.5":
   version: 3.17.5
   resolution: "eslint-plugin-tailwindcss@npm:3.17.5"
   dependencies:

@@ -16,7 +16,6 @@ https://colornamer.robertcooper.me/
 
 https://fontawesome.com/search?q=
 
-
 ## Sources
 
 https://github.com/themesberg/flowbite-react

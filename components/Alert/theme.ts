@@ -1,19 +1,19 @@
 import { tv } from "tailwind-variants";
 
 export const AlertTheme = tv({
-  base: "border-opacity-20 px-5 py-3 transition-all border bg-opacity-20 rounded-lg",
+  base: "rounded-lg border border-opacity-20 bg-opacity-20 px-5 py-3 transition-all",
   variants: {
     variant: {
-      primary: "text-primary-800 bg-primary-500 border-primary-500",
+      primary: "border-primary-500 bg-primary-500 text-primary-800",
       secondary:
-        "text-secondary-800 dark:text-secondary-200 bg-secondary-500 border-secondary-500",
+        "border-secondary-500 bg-secondary-500 text-secondary-800 dark:text-secondary-200",
       success:
-        "text-success-800 bg-success-500 border-success-500 bg-opacity-10 border-opacity-10",
-      danger: "text-danger-800 bg-danger-500 border-danger-500",
-      warning: "text-warning-800 bg-warning-500 border-warning-500",
-      info: "text-info-800 bg-info-500 border-info-500",
+        "border-success-500 border-opacity-10 bg-success-500 bg-opacity-10 text-success-800",
+      danger: "border-danger-500 bg-danger-500 text-danger-800",
+      warning: "border-warning-500 bg-warning-500 text-warning-800",
+      info: "border-info-500 bg-info-500 text-info-800",
       light: "",
-      dark: "text-dark-800 dark:text-dark-200 bg-dark-500 border-dark-500",
+      dark: "border-dark-500 bg-dark-500 text-dark-800 dark:text-dark-200",
       link: "",
     },
   },
