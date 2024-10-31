@@ -9,6 +9,16 @@ const config: StorybookConfig = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    "@storybook/addon-designs",
+    "@storybook/addon-styling",
+    {
+      name: "@storybook/addon-styling",
+      options: {
+        postcss: {
+          implementation: require.resolve("postcss"),
+        },
+      },
+    },
   ],
   framework: {
     name: "@storybook/nextjs",
