@@ -1,4 +1,5 @@
 import { z } from "zod"
+import { UserModel, mongoConnect } from "../../databases/mongo"
 import { publicProcedure, router } from "../trpc"
 
 export const examplesRouter = router({
@@ -11,7 +12,14 @@ export const examplesRouter = router({
       })
     )
     .query(async ({ ctx, input }) => {
-      return ctx.auth
+      await mongoConnect()
+
+      const count = await UserModel.countDocuments()
+
+      return {
+        auth: ctx.auth,
+        count,
+      }
     }),
 
   set: publicProcedure

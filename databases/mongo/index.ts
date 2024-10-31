@@ -1,2 +1,2 @@
-export * from "./databaseConnect"
+export * from "./mongoConnect"
 export * from "./models"

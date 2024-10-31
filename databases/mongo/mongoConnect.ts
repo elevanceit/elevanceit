@@ -17,7 +17,7 @@ if (!cached) {
   cached = global.client = { connection: null, promise: null }
 }
 
-export async function databaseConnect() {
+export async function mongoConnect() {
   if (cached.connection) {
     return cached.connection
   }
