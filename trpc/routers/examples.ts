@@ -11,7 +11,7 @@ export const examplesRouter = router({
       })
     )
     .query(async ({ ctx, input }) => {
-      return input
+      return ctx.auth
     }),
 
   set: publicProcedure
