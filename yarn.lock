@@ -9281,6 +9281,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/query-devtools@npm:5.58.0":
+  version: 5.58.0
+  resolution: "@tanstack/query-devtools@npm:5.58.0"
+  checksum: 10c0/3b0ad21503682f6c452f5f78f5cc9007e902f455c70fd7d537ca2c3b13f41607ab4ad612c0ca19abc24aa2a9fa9bf019101dfeb43abfa53f04782322558f19f6
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-query-devtools@npm:5.59.16":
+  version: 5.59.16
+  resolution: "@tanstack/react-query-devtools@npm:5.59.16"
+  dependencies:
+    "@tanstack/query-devtools": "npm:5.58.0"
+  peerDependencies:
+    "@tanstack/react-query": ^5.59.16
+    react: ^18 || ^19
+  checksum: 10c0/eea7960193b5287e0935c9a2ff5c58bae36e96358cdc40807ef7b3d3a2b480b1bd853bed0ceda54b39f16f88b6dac8bdf439856458cd6fd7394b221d545e59f2
+  languageName: node
+  linkType: hard
+
 "@tanstack/react-query@npm:5.59.16":
   version: 5.59.16
   resolution: "@tanstack/react-query@npm:5.59.16"
@@ -9436,7 +9455,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@trpc/client@npm:11.0.0-rc.604":
+"@trpc/client@npm:next":
   version: 11.0.0-rc.604
   resolution: "@trpc/client@npm:11.0.0-rc.604"
   peerDependencies:
@@ -9445,7 +9464,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@trpc/next@npm:11.0.0-rc.604":
+"@trpc/next@npm:next":
   version: 11.0.0-rc.604
   resolution: "@trpc/next@npm:11.0.0-rc.604"
   peerDependencies:
@@ -9465,7 +9484,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@trpc/react-query@npm:11.0.0-rc.604":
+"@trpc/react-query@npm:next":
   version: 11.0.0-rc.604
   resolution: "@trpc/react-query@npm:11.0.0-rc.604"
   peerDependencies:
@@ -9478,7 +9497,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@trpc/server@npm:11.0.0-rc.604":
+"@trpc/server@npm:next":
   version: 11.0.0-rc.604
   resolution: "@trpc/server@npm:11.0.0-rc.604"
   checksum: 10c0/2961cc0a0728c7857f45ab29a325d83a958d21a089dabd012a2bfff8551f2c54471ba26a4c903f56325f55fd2254decade8c93f2031db1b28ba20935fe94992f
@@ -13152,6 +13171,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"copy-anything@npm:^3.0.2":
+  version: 3.0.5
+  resolution: "copy-anything@npm:3.0.5"
+  dependencies:
+    is-what: "npm:^4.1.8"
+  checksum: 10c0/01eadd500c7e1db71d32d95a3bfaaedcb839ef891c741f6305ab0461398056133de08f2d1bf4c392b364e7bdb7ce498513896e137a7a183ac2516b065c28a4fe
+  languageName: node
+  linkType: hard
+
 "core-js-compat@npm:^3.37.1, core-js-compat@npm:^3.38.0":
   version: 3.38.1
   resolution: "core-js-compat@npm:3.38.1"
@@ -14486,15 +14514,16 @@ __metadata:
     "@tailwindcss/forms": "npm:0.5.9"
     "@tailwindcss/typography": "npm:0.5.15"
     "@tanstack/react-query": "npm:5.59.16"
+    "@tanstack/react-query-devtools": "npm:5.59.16"
     "@testing-library/jest-dom": "npm:6.6.2"
     "@testing-library/react": "npm:16.0.1"
     "@testing-library/user-event": "npm:14.5.2"
     "@total-typescript/ts-reset": "npm:0.6.1"
     "@trivago/prettier-plugin-sort-imports": "npm:4.3.0"
-    "@trpc/client": "npm:11.0.0-rc.604"
-    "@trpc/next": "npm:11.0.0-rc.604"
-    "@trpc/react-query": "npm:11.0.0-rc.604"
-    "@trpc/server": "npm:11.0.0-rc.604"
+    "@trpc/client": "npm:next"
+    "@trpc/next": "npm:next"
+    "@trpc/react-query": "npm:next"
+    "@trpc/server": "npm:next"
     "@typegoose/typegoose": "npm:12.8.0"
     "@types/dompurify": "npm:3.0.5"
     "@types/jest": "npm:29.5.14"
@@ -14564,7 +14593,7 @@ __metadata:
     nanoid: "npm:5.0.8"
     next: "npm:15.0.2"
     next-compose-plugins: "npm:2.2.1"
-    next-nprogress-bar: "npm:^2.3.14"
+    next-nprogress-bar: "npm:2.3.14"
     next-seo: "npm:6.6.0"
     next-sitemap: "npm:4.2.3"
     next-themes: "npm:0.3.0"
@@ -14609,6 +14638,7 @@ __metadata:
     storybook: "npm:8.3.6"
     striptags: "npm:3.2.0"
     styled-components: "npm:6.1.13"
+    superjson: "npm:2.2.1"
     swiper: "npm:11.1.14"
     tailwind-merge: "npm:2.5.4"
     tailwind-scrollbar: "npm:3.1.0"
@@ -18639,6 +18669,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"is-what@npm:^4.1.8":
+  version: 4.1.16
+  resolution: "is-what@npm:4.1.16"
+  checksum: 10c0/611f1947776826dcf85b57cfb7bd3b3ea6f4b94a9c2f551d4a53f653cf0cb9d1e6518846648256d46ee6c91d114b6d09d2ac8a07306f7430c5900f87466aae5b
+  languageName: node
+  linkType: hard
+
 "is-windows@npm:^0.2.0":
   version: 0.2.0
   resolution: "is-windows@npm:0.2.0"
@@ -21595,7 +21632,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-nprogress-bar@npm:^2.3.14":
+"next-nprogress-bar@npm:2.3.14":
   version: 2.3.14
   resolution: "next-nprogress-bar@npm:2.3.14"
   dependencies:
@@ -26329,6 +26366,15 @@ __metadata:
     function-timeout: "npm:^1.0.1"
     time-span: "npm:^5.1.0"
   checksum: 10c0/9727b57702308af74be90ed92d4612eed6c8b03fdf25efe1a3455e40d7145246516638bcabf3538e9e9c706d8ecb233e4888e0223283543fb2836d4d7acb6200
+  languageName: node
+  linkType: hard
+
+"superjson@npm:2.2.1":
+  version: 2.2.1
+  resolution: "superjson@npm:2.2.1"
+  dependencies:
+    copy-anything: "npm:^3.0.2"
+  checksum: 10c0/5d8202c955170bd98ef2647f712754ac54d2d007923cfdb53a4b035304d8964b8c41d5eff41ee277896e2ac32e06abb009b571f1589416b729fe40216320cc7a
   languageName: node
   linkType: hard
 

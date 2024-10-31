@@ -1,5 +1,6 @@
 import { Suspense } from "react"
 import { Metadata } from "next"
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
 import { Servers } from "../components/Servers"
 
 export const metadata: Metadata = {
@@ -25,6 +26,12 @@ export default function Page() {
       <Suspense fallback={<div>Loading...</div>}>
         <Servers />
       </Suspense>
+      <SignedOut>
+        <SignInButton />
+      </SignedOut>
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
     </section>
   )
 }

@@ -27,48 +27,50 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   // const pathname = usePathname()
 
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={cn(font.className, "group/page relative min-h-screen antialiased", "flex w-full flex-col")}>
-        {HAS_PRELOADER && <Preloader />}
+    <ClerkProvider dynamic>
+      <html lang="en" suppressHydrationWarning>
+        <body className={cn(font.className, "group/page relative min-h-screen antialiased", "flex w-full flex-col")}>
+          {HAS_PRELOADER && <Preloader />}
 
-        <ClerkProvider
-          // afterSignInUrl={pathname}
-          // signInForceRedirectUrl={pathname}
-          // signInFallbackRedirectUrl={pathname}
-          // afterSignUpUrl={pathname}
-          // signUpForceRedirectUrl={pathname}
-          // signUpFallbackRedirectUrl={pathname}
-          // redirectUrl={pathname}
-          // afterSignOutUrl={pathname}
-          appearance={{
-            elements: {
-              headerTitle: "text-2xl",
-              headerSubtitle: "text-xl",
-              formFieldLabel: "text-base",
-              formFieldAction: "text-base",
-              footerActionText: "text-base",
-              footerActionLink: "text-base",
-              formButtonPrimary: "bg-blue1",
-            },
-          }}
-        >
-          <TRPCProvider>
-            <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-              <NuqsAdapter>
-                <ProgressProviders>
-                  {HAS_CURSOR && <Cursor />}
+          <ClerkProvider
+            // afterSignInUrl={pathname}
+            // signInForceRedirectUrl={pathname}
+            // signInFallbackRedirectUrl={pathname}
+            // afterSignUpUrl={pathname}
+            // signUpForceRedirectUrl={pathname}
+            // signUpFallbackRedirectUrl={pathname}
+            // redirectUrl={pathname}
+            // afterSignOutUrl={pathname}
+            appearance={{
+              elements: {
+                headerTitle: "text-2xl",
+                headerSubtitle: "text-xl",
+                formFieldLabel: "text-base",
+                formFieldAction: "text-base",
+                footerActionText: "text-base",
+                footerActionLink: "text-base",
+                formButtonPrimary: "bg-blue1",
+              },
+            }}
+          >
+            <TRPCProvider>
+              <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+                <NuqsAdapter>
+                  <ProgressProviders>
+                    {HAS_CURSOR && <Cursor />}
 
-                  {HAS_TOTOP && <ToTop />}
+                    {HAS_TOTOP && <ToTop />}
 
-                  {HAS_CALL2ACTION && <Call2Action />}
+                    {HAS_CALL2ACTION && <Call2Action />}
 
-                  {children}
-                </ProgressProviders>
-              </NuqsAdapter>
-            </ThemeProvider>
-          </TRPCProvider>
-        </ClerkProvider>
-      </body>
-    </html>
+                    {children}
+                  </ProgressProviders>
+                </NuqsAdapter>
+              </ThemeProvider>
+            </TRPCProvider>
+          </ClerkProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }
