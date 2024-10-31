@@ -53,13 +53,16 @@ Here is the folder structure of this app.
 
 ## :toolbox: Getting Started
 
-1. Make sure **Git** and **NodeJS** is installed.
+1. Make sure **[Git](https://git-scm.com "Git")** and **[Node v20](https://nodejs.org "https://nodejs.org/")** is
+   installed (you can use [nvm](https://github.com/nvm-sh/nvm "nvm")).
 
-2. Clone this repository to your local computer.
+2. Clone [this repository](https://github.com/elevanceit/elevanceit "this repository") to your local computer.
 
-3. Open terminal in root directory. Run `npm install --legacy-peer-deps` or `yarn install --legacy-peer-deps`.
+3. Open terminal in root directory. Run `yarn install`.
 
-4. Now app is fully configured 👍 and you can start using this app using `npm run dev` or `yarn dev`.
+4. Create `.env` or `.env.local` with environment parameters
+
+5. Now app is fully configured 👍 and you can start using this app using `yarn dev`.
 
 ## :camera: Screenshots:
 
