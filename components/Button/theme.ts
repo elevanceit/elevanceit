@@ -1,11 +1,12 @@
-import { tv } from "tailwind-variants"
-import { BUTTON_VARIANTS } from "../../enums"
+import { tv } from "tailwind-variants";
+import { BUTTON_VARIANTS } from "../../enums";
 
 export const ButtonTheme = tv({
   base: "px-4 py-2.5 font-medium border dark:bg-opacity-10 hover:scale-105 disabled:opacity-80 disabled:cursor-not-allowed dark:hover:bg-opacity-100 hover:bg-opacity-100 bg-opacity-100 active:opacity-90 transition-all duration-300 hover:text-white rounded-full",
   variants: {
     variant: {
-      primary: "text-primary-500 bg-primary-100 dark:bg-primary-500 border-primary-500 hover:bg-primary-500",
+      primary:
+        "text-primary-500 bg-primary-100 dark:bg-primary-500 border-primary-500 hover:bg-primary-500",
       // secondary:
       //   "text-secondary-500 bg-secondary-100 dark:bg-secondary-500 border-secondary-500 hover:bg-secondary-500",
       // success: "text-success-500 bg-success-100 dark:bg-success-500 border-success-500 hover:bg-success-500",
@@ -47,4 +48,4 @@ export const ButtonTheme = tv({
   defaultVariants: {
     variant: "primary",
   },
-})
+});

@@ -1,7 +1,13 @@
-import { toGradientStyle } from "./gradient"
-import { LinearGradientProps } from "./types"
+import { toGradientStyle } from "./gradient";
+import { LinearGradientProps } from "./types";
 
-export const LinearGradient = ({ children, style, gradient, fallbackColor, ...rest }: LinearGradientProps) => {
+export const LinearGradient = ({
+  children,
+  style,
+  gradient,
+  fallbackColor,
+  ...rest
+}: LinearGradientProps) => {
   return (
     <span
       {...rest}
@@ -12,5 +18,5 @@ export const LinearGradient = ({ children, style, gradient, fallbackColor, ...re
     >
       {children}
     </span>
-  )
-}
+  );
+};

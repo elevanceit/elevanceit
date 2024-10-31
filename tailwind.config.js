@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const { pick, omit } = require("lodash")
-const colors = require("tailwindcss/colors")
-const defaultTheme = require("tailwindcss/defaultTheme")
-const plugin = require("tailwindcss/plugin")
+const { pick, omit } = require("lodash");
+const colors = require("tailwindcss/colors");
+const defaultTheme = require("tailwindcss/defaultTheme");
+const plugin = require("tailwindcss/plugin");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -206,12 +206,12 @@ module.exports = {
     require("tailwindcss-3d"),
     require("tailwindcss-radix")(),
     plugin(({ addVariant }) => {
-      addVariant("mac", ".mac &")
-      addVariant("windows", ".windows &")
-      addVariant("ios", ".ios &")
+      addVariant("mac", ".mac &");
+      addVariant("windows", ".windows &");
+      addVariant("ios", ".ios &");
     }),
   ],
   future: {
     hoverOnlyWhenSupported: true,
   },
-}
+};

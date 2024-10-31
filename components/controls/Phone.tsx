@@ -1,19 +1,30 @@
-import { FieldValues } from "react-hook-form/dist/types/fields"
-import { Control } from "react-hook-form/dist/types/form"
-import "react-phone-number-input/style.css"
-import { DefaultInputComponentProps } from "react-phone-number-input"
+import { FieldValues } from "react-hook-form/dist/types/fields";
+import { Control } from "react-hook-form/dist/types/form";
+import { DefaultInputComponentProps } from "react-phone-number-input";
 import PhoneInputWithCountry, {
   DefaultFormValues,
   Props as PhoneInputWithCountryProps,
-} from "react-phone-number-input/react-hook-form"
-import { cn } from "../../utils"
+} from "react-phone-number-input/react-hook-form";
+import "react-phone-number-input/style.css";
+import { cn } from "../../utils";
 
-interface Props extends PhoneInputWithCountryProps<DefaultInputComponentProps, DefaultFormValues> {
-  fields?: FieldValues
-  control?: Control
+interface Props
+  extends PhoneInputWithCountryProps<
+    DefaultInputComponentProps,
+    DefaultFormValues
+  > {
+  fields?: FieldValues;
+  control?: Control;
 }
 
-export function Phone({ name, fields, control, className, css, ...rest }: Props) {
+export function Phone({
+  name,
+  fields,
+  control,
+  className,
+  css,
+  ...rest
+}: Props) {
   return (
     <PhoneInputWithCountry
       css={{
@@ -34,5 +45,5 @@ export function Phone({ name, fields, control, className, css, ...rest }: Props)
       name={name}
       {...rest}
     />
-  )
+  );
 }

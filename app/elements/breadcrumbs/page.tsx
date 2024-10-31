@@ -1,6 +1,6 @@
-import { Metadata } from "next"
-import { Card } from "../../../components/Card"
-import { Headline } from "../../../elements/Headline"
+import { Metadata } from "next";
+import { Card } from "../../../components/Card";
+import { Headline } from "../../../elements/Headline";
 
 export const metadata: Metadata = {
   title: "",
@@ -17,16 +17,17 @@ export const metadata: Metadata = {
       },
     ],
   },
-}
+};
 
 export default function Page() {
   return (
     <section className="flex w-full flex-col gap-6">
       <Headline title="Breadcrumbs">
-        Indicate the current page’s location within a navigational hierarchy that automatically adds separators via CSS.
+        Indicate the current page’s location within a navigational hierarchy
+        that automatically adds separators via CSS.
       </Headline>
 
       <Card>Breadcrumbs</Card>
     </section>
-  )
+  );
 }

@@ -1,9 +1,9 @@
-import { FC, HTMLAttributes } from "react"
-import { cn } from "../utils"
+import { FC, HTMLAttributes } from "react";
+import { cn } from "../utils";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  color?: string
-  top?: string
+  color?: string;
+  top?: string;
 }
 
 export const AnimatedText: FC<Props> = ({
@@ -27,4 +27,4 @@ export const AnimatedText: FC<Props> = ({
   >
     {children}
   </span>
-)
+);

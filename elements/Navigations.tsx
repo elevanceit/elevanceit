@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { FC, HTMLAttributes } from "react"
-import { cn } from "../utils"
-import { Card } from "../components/Card"
-import { ELEMENTS } from "../constants"
-import { Anchor } from "../components/Anchor"
+import { FC, HTMLAttributes } from "react";
+import { Anchor } from "../components/Anchor";
+import { Card } from "../components/Card";
+import { ELEMENTS } from "../constants";
+import { cn } from "../utils";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {}
 
@@ -14,7 +14,9 @@ export const Navigations: FC<Props> = ({ className, ...rest }: Props) => {
       {ELEMENTS.flatMap((elements) =>
         Object.entries(elements).map(([group, links]) => (
           <ul key={group} className="relative flex w-full flex-col gap-0.5">
-            <li className="sticky top-0 -mx-3 px-6 py-3 font-semibold">{group}</li>
+            <li className="sticky top-0 -mx-3 px-6 py-3 font-semibold">
+              {group}
+            </li>
 
             {Object.entries(links).map(([name, href]) => (
               <li key={name} className="-mx-3">
@@ -28,8 +30,8 @@ export const Navigations: FC<Props> = ({ className, ...rest }: Props) => {
               </li>
             ))}
           </ul>
-        ))
+        )),
       )}
     </Card>
-  )
-}
+  );
+};

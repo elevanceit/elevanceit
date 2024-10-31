@@ -1,14 +1,20 @@
-import { Montserrat } from "next/font/google"
-import { ReactNode } from "react"
-import { Preloader } from "../components/Preloader"
-import { ThemeProvider } from "../providers/theme"
-import { cn } from "../utils"
-import "styles/styles.css"
-import { HAS_CALL2ACTION, HAS_CURSOR, HAS_PRELOADER, HAS_TOTOP } from "../constants"
-import { Cursor } from "../components/Cursor"
-import { ToTop } from "../components/ToTop"
-import { Call2Action } from "../components/Call2Action"
-import { ClerkProvider } from "@clerk/nextjs"
+import { ReactNode } from "react";
+import { Montserrat } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
+import "styles/styles.css";
+import { Call2Action } from "../components/Call2Action";
+import { Cursor } from "../components/Cursor";
+import { Preloader } from "../components/Preloader";
+import { ToTop } from "../components/ToTop";
+import {
+  HAS_CALL2ACTION,
+  HAS_CURSOR,
+  HAS_PRELOADER,
+  HAS_TOTOP,
+} from "../constants";
+import { ThemeProvider } from "../providers/theme";
+import { cn } from "../utils";
+
 // import {usePathname} from "next/navigation";
 
 const font = Montserrat({
@@ -17,14 +23,20 @@ const font = Montserrat({
   subsets: ["latin"],
   display: "block",
   variable: "--font-inter",
-})
+});
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   // const pathname = usePathname()
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn(font.className, "group/page relative min-h-screen", "flex w-full flex-col")}>
+      <body
+        className={cn(
+          font.className,
+          "group/page relative min-h-screen",
+          "flex w-full flex-col",
+        )}
+      >
         {HAS_PRELOADER && <Preloader />}
 
         <ClerkProvider
@@ -48,7 +60,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             },
           }}
         >
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
             {HAS_CURSOR && <Cursor />}
 
             {HAS_TOTOP && <ToTop />}
@@ -60,5 +77,5 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </ClerkProvider>
       </body>
     </html>
-  )
+  );
 }

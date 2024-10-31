@@ -1,28 +1,35 @@
-import { IframeHTMLAttributes, useEffect, useState } from "react"
-import { createPortal } from "react-dom"
-import { cn } from "../utils"
+import { IframeHTMLAttributes, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import { cn } from "../utils";
 
 interface Props extends IframeHTMLAttributes<HTMLIFrameElement> {
-  border?: number
+  border?: number;
 }
 
-export const Frame = ({ border = 0, className, title, children, ...rest }: Props) => {
-  const [ref, setRef] = useState<HTMLIFrameElement | null>(null)
-  const [height, setHeight] = useState(0)
+export const Frame = ({
+  border = 0,
+  className,
+  title,
+  children,
+  ...rest
+}: Props) => {
+  const [ref, setRef] = useState<HTMLIFrameElement | null>(null);
+  const [height, setHeight] = useState(0);
 
-  const mountNode: HTMLBodyElement | undefined = ref?.contentWindow?.document?.body as HTMLBodyElement | undefined
+  const mountNode: HTMLBodyElement | undefined = ref?.contentWindow?.document
+    ?.body as HTMLBodyElement | undefined;
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (mountNode) {
-        setHeight(mountNode.scrollHeight + border)
+        setHeight(mountNode.scrollHeight + border);
       }
-    }, 1000 / 5)
+    }, 1000 / 5);
 
     return () => {
-      clearInterval(interval)
-    }
-  }, [mountNode, border])
+      clearInterval(interval);
+    };
+  }, [mountNode, border]);
 
   return (
     <iframe
@@ -37,5 +44,5 @@ export const Frame = ({ border = 0, className, title, children, ...rest }: Props
     >
       {children && mountNode && createPortal(children as any, mountNode)}
     </iframe>
-  )
-}
+  );
+};

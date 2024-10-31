@@ -1,38 +1,45 @@
-import * as Switch from "@radix-ui/react-switch"
-import { HTMLAttributes, HTMLInputTypeAttribute, ReactNode } from "react"
-import { FieldValues } from "react-hook-form/dist/types/fields"
-import { Control } from "react-hook-form/dist/types/form"
-import { PatternFormat } from "react-number-format"
-import { File } from "./File"
-import { Input } from "./Input"
-import { Multiselect } from "./Multiselect"
-import { Phone } from "./Phone"
-import { Select } from "./Select"
-import { Textarea } from "./Textarea"
-import { cn } from "../../utils"
+import { HTMLAttributes, HTMLInputTypeAttribute, ReactNode } from "react";
+import { FieldValues } from "react-hook-form/dist/types/fields";
+import { Control } from "react-hook-form/dist/types/form";
+import { PatternFormat } from "react-number-format";
+import * as Switch from "@radix-ui/react-switch";
+import { cn } from "../../utils";
+import { File } from "./File";
+import { Input } from "./Input";
+import { Multiselect } from "./Multiselect";
+import { Phone } from "./Phone";
+import { Select } from "./Select";
+import { Textarea } from "./Textarea";
 
-const DIVIDER = "_________"
+const DIVIDER = "_________";
 
 interface Props extends HTMLAttributes<HTMLLabelElement> {
-  readonly?: boolean
-  label?: ReactNode
-  placeholder?: string
-  details?: string
-  type?: HTMLInputTypeAttribute | "textarea" | "select" | "switch" | "multiselect" | "float" | undefined
-  before?: ReactNode
-  after?: ReactNode
-  error?: string
-  classNameInput?: string
-  classNameDetails?: string
-  classNameContainer?: string
-  classNameWrapper?: string
-  classNameError?: string
-  fields?: FieldValues
-  options?: Record<string, string>
-  optionsOrdered?: [key: string, value: string][]
-  hasError?: boolean
-  disabled?: boolean
-  control?: Control
+  readonly?: boolean;
+  label?: ReactNode;
+  placeholder?: string;
+  details?: string;
+  type?:
+    | HTMLInputTypeAttribute
+    | "textarea"
+    | "select"
+    | "switch"
+    | "multiselect"
+    | "float"
+    | undefined;
+  before?: ReactNode;
+  after?: ReactNode;
+  error?: string;
+  classNameInput?: string;
+  classNameDetails?: string;
+  classNameContainer?: string;
+  classNameWrapper?: string;
+  classNameError?: string;
+  fields?: FieldValues;
+  options?: Record<string, string>;
+  optionsOrdered?: [key: string, value: string][];
+  hasError?: boolean;
+  disabled?: boolean;
+  control?: Control;
 }
 
 export function Field({
@@ -81,7 +88,12 @@ export function Field({
             defaultValue=""
             disabled={disabled || readonly}
             readOnly={readonly}
-            className={cn("", classNameInput, fields?.multiple && "", error && "border-fever")}
+            className={cn(
+              "",
+              classNameInput,
+              fields?.multiple && "",
+              error && "border-fever",
+            )}
             {...fields}
           >
             {!fields?.multiple && (
@@ -132,7 +144,9 @@ export function Field({
               <Switch.Thumb className="block size-[21px] rounded-full bg-white transition-transform duration-100 will-change-transform translate-x-0.5 data-[state=checked]:translate-x-[19px]" />
             </Switch.Root>
 
-            <div className={cn(`ml-4 flex`, error && "")}>{children || placeholder}</div>
+            <div className={cn(`ml-4 flex`, error && "")}>
+              {children || placeholder}
+            </div>
           </div>
         )}
 
@@ -144,15 +158,22 @@ export function Field({
                 label,
               }))}
               onChange={(option: any) => {
-                fields?.onChange(option?.value)
+                fields?.onChange(option?.value);
               }}
             />
-            <div className={cn(`ml-4 flex`, error && "")}>{children || placeholder}</div>
+            <div className={cn(`ml-4 flex`, error && "")}>
+              {children || placeholder}
+            </div>
           </div>
         )}
 
         {type === "checkbox" && (
-          <div className={cn("flex w-full cursor-pointer items-center", classNameContainer)}>
+          <div
+            className={cn(
+              "flex w-full cursor-pointer items-center",
+              classNameContainer,
+            )}
+          >
             <input
               readOnly={readonly}
               disabled={disabled || readonly}
@@ -165,7 +186,9 @@ export function Field({
               className={cn("shadow-none", fields?.className)}
               {...fields}
             />
-            <div className={cn(`ml-4 flex`, error && "")}>{children || placeholder}</div>
+            <div className={cn(`ml-4 flex`, error && "")}>
+              {children || placeholder}
+            </div>
           </div>
         )}
 
@@ -183,7 +206,9 @@ export function Field({
               className={cn("shadow-none", fields?.className)}
               {...fields}
             />
-            <div className={cn(`ml-4 flex`, error && "")}>{children || placeholder}</div>
+            <div className={cn(`ml-4 flex`, error && "")}>
+              {children || placeholder}
+            </div>
           </div>
         )}
 
@@ -215,13 +240,18 @@ export function Field({
             readOnly={readonly}
             disabled={disabled || readonly}
             placeholder={placeholder}
-            className={cn("", classNameInput, error && "border-fever", readonly && "border-transparent")}
+            className={cn(
+              "",
+              classNameInput,
+              error && "border-fever",
+              readonly && "border-transparent",
+            )}
             format="#### #### #### #### ###"
             name={fields?.name}
             getInputRef={fields?.ref}
             onBlur={fields?.onBlur}
             onValueChange={({ value }) => {
-              fields?.onChange({ target: { name: fields?.name, value } })
+              fields?.onChange({ target: { name: fields?.name, value } });
             }}
           />
         )}
@@ -231,13 +261,18 @@ export function Field({
             readOnly={readonly}
             disabled={disabled || readonly}
             placeholder={placeholder}
-            className={cn("", classNameInput, error && "border-fever", readonly && "border-transparent")}
+            className={cn(
+              "",
+              classNameInput,
+              error && "border-fever",
+              readonly && "border-transparent",
+            )}
             format="##/##"
             name={fields?.name}
             getInputRef={fields?.ref}
             onBlur={fields?.onBlur}
             onValueChange={({ value }) => {
-              fields?.onChange({ target: { name: fields?.name, value } })
+              fields?.onChange({ target: { name: fields?.name, value } });
             }}
           />
         )}
@@ -247,13 +282,18 @@ export function Field({
             readOnly={readonly}
             disabled={disabled || readonly}
             placeholder={placeholder}
-            className={cn("", classNameInput, error && "border-fever", readonly && "border-transparent")}
+            className={cn(
+              "",
+              classNameInput,
+              error && "border-fever",
+              readonly && "border-transparent",
+            )}
             format="####"
             name={fields?.name}
             getInputRef={fields?.ref}
             onBlur={fields?.onBlur}
             onValueChange={({ value }) => {
-              fields?.onChange({ target: { name: fields?.name, value } })
+              fields?.onChange({ target: { name: fields?.name, value } });
             }}
           />
         )}
@@ -298,11 +338,23 @@ export function Field({
         {after}
       </div>
 
-      {details && <div className={cn("mt-1 text-sm opacity-75", classNameDetails)}>{details}</div>}
+      {details && (
+        <div className={cn("mt-1 text-sm opacity-75", classNameDetails)}>
+          {details}
+        </div>
+      )}
 
       {hasError && (
-        <div className={cn("text-fever h-4 text-sm", (!error || readonly) && "invisible", classNameError)}>{error}</div>
+        <div
+          className={cn(
+            "text-fever h-4 text-sm",
+            (!error || readonly) && "invisible",
+            classNameError,
+          )}
+        >
+          {error}
+        </div>
       )}
     </label>
-  )
+  );
 }

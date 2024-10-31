@@ -1,19 +1,19 @@
-import Link from "next/link"
-import { HTMLAttributes, useState } from "react"
-import { FreeMode, Navigation, Thumbs } from "swiper/modules"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Swiper as SwiperClass, SwiperOptions } from "swiper/types"
-import { ImageWithFallback } from "./ImageWithFallback"
-import { PhotoSwipe } from "./PhotoSwipe"
-import { cn } from "../utils"
+import { HTMLAttributes, useState } from "react";
+import Link from "next/link";
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper as SwiperClass, SwiperOptions } from "swiper/types";
+import { cn } from "../utils";
+import { ImageWithFallback } from "./ImageWithFallback";
+import { PhotoSwipe } from "./PhotoSwipe";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   images: {
-    link: string
-    title: string
-  }[]
-  sliderSwiperOptions?: SwiperOptions
-  thumbsSwiperOptions?: SwiperOptions
+    link: string;
+    title: string;
+  }[];
+  sliderSwiperOptions?: SwiperOptions;
+  thumbsSwiperOptions?: SwiperOptions;
 }
 
 export const Gallery = ({
@@ -24,7 +24,7 @@ export const Gallery = ({
   children,
   ...rest
 }: Props) => {
-  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null)
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperClass | null>(null);
 
   return (
     <PhotoSwipe className={cn("flex flex-col gap-4", className)} {...rest}>
@@ -36,14 +36,24 @@ export const Gallery = ({
           spaceBetween={16}
           navigation={true}
           thumbs={{
-            swiper: thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
+            swiper:
+              thumbsSwiper && !thumbsSwiper.destroyed ? thumbsSwiper : null,
           }}
           modules={[FreeMode, Navigation, Thumbs]}
           {...sliderSwiperOptions}
         >
           {images.map((image) => (
-            <SwiperSlide className="cursor-pointer" key={`${image.title}${image.link}`}>
-              <Link prefetch={false} className="select-none" aria-label={image.title} href={image.link} target="_blank">
+            <SwiperSlide
+              className="cursor-pointer"
+              key={`${image.title}${image.link}`}
+            >
+              <Link
+                prefetch={false}
+                className="select-none"
+                aria-label={image.title}
+                href={image.link}
+                target="_blank"
+              >
                 <ImageWithFallback
                   className="object-cover"
                   priority={true}
@@ -69,7 +79,10 @@ export const Gallery = ({
           {...thumbsSwiperOptions}
         >
           {images.map((image) => (
-            <SwiperSlide className="cursor-pointer" key={`${image.title}${image.link}`}>
+            <SwiperSlide
+              className="cursor-pointer"
+              key={`${image.title}${image.link}`}
+            >
               <ImageWithFallback
                 className="h-[100px] select-none object-cover"
                 priority={true}
@@ -84,5 +97,5 @@ export const Gallery = ({
       </div>
       {children}
     </PhotoSwipe>
-  )
-}
+  );
+};

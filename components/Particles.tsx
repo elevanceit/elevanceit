@@ -1,13 +1,17 @@
-import { memo } from "react"
-import ReactParticles, { ParticlesProps } from "react-particles"
-import { loadFull } from "tsparticles"
+import { memo } from "react";
+import ReactParticles, { ParticlesProps } from "react-particles";
+import { loadFull } from "tsparticles";
 
 interface Props extends ParticlesProps {
-  events?: boolean
-  color?: string
+  events?: boolean;
+  color?: string;
 }
 
-export const Particles = memo(function Particles({ events = false, color = "#68D861", ...rest }: Props) {
+export const Particles = memo(function Particles({
+  events = false,
+  color = "#68D861",
+  ...rest
+}: Props) {
   return (
     <ReactParticles
       init={loadFull}
@@ -124,5 +128,5 @@ export const Particles = memo(function Particles({ events = false, color = "#68D
       }}
       {...rest}
     />
-  )
-})
+  );
+});

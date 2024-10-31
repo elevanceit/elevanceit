@@ -1,23 +1,44 @@
-import Link from "next/link"
-import { ForwardedRef, forwardRef, HTMLAttributeAnchorTarget, HTMLAttributes } from "react"
-import { VariantProps } from "tailwind-variants"
-import { AlertTheme } from "./theme"
-import { cn } from "../../utils"
+import {
+  ForwardedRef,
+  HTMLAttributeAnchorTarget,
+  HTMLAttributes,
+  forwardRef,
+} from "react";
+import Link from "next/link";
+import { VariantProps } from "tailwind-variants";
+import { cn } from "../../utils";
+import { AlertTheme } from "./theme";
 
 export interface AlertVariants extends VariantProps<typeof AlertTheme> {}
 
-export interface AlertProps extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>, AlertVariants {
-  hover?: boolean
-  href?: string
-  target?: HTMLAttributeAnchorTarget
-  rounded?: boolean
-  disabled?: boolean
-  type?: "submit" | "reset" | "button" | undefined
+export interface AlertProps
+  extends HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>,
+    AlertVariants {
+  hover?: boolean;
+  href?: string;
+  target?: HTMLAttributeAnchorTarget;
+  rounded?: boolean;
+  disabled?: boolean;
+  type?: "submit" | "reset" | "button" | undefined;
 }
 
-export const Alert = forwardRef<HTMLAnchorElement | HTMLButtonElement, AlertProps>(function Alert(
-  { hover, href, target, rounded, variant = "primary", className, children, disabled, type, ...rest }: AlertProps,
-  ref
+export const Alert = forwardRef<
+  HTMLAnchorElement | HTMLButtonElement,
+  AlertProps
+>(function Alert(
+  {
+    hover,
+    href,
+    target,
+    rounded,
+    variant = "primary",
+    className,
+    children,
+    disabled,
+    type,
+    ...rest
+  }: AlertProps,
+  ref,
 ) {
   return href ? (
     <Link
@@ -25,7 +46,12 @@ export const Alert = forwardRef<HTMLAnchorElement | HTMLButtonElement, AlertProp
       ref={ref as ForwardedRef<HTMLAnchorElement>}
       href={href}
       target={target}
-      className={cn("relative", AlertTheme({ variant }), rounded && "rounded-full", className)}
+      className={cn(
+        "relative",
+        AlertTheme({ variant }),
+        rounded && "rounded-full",
+        className,
+      )}
       {...rest}
     >
       {children}
@@ -36,10 +62,15 @@ export const Alert = forwardRef<HTMLAnchorElement | HTMLButtonElement, AlertProp
       type={type}
       ref={ref as ForwardedRef<HTMLButtonElement>}
       disabled={disabled}
-      className={cn("relative", AlertTheme({ variant }), rounded && "rounded-full", className)}
+      className={cn(
+        "relative",
+        AlertTheme({ variant }),
+        rounded && "rounded-full",
+        className,
+      )}
       {...rest}
     >
       {children}
     </button>
-  )
-})
+  );
+});

@@ -1,7 +1,7 @@
-import { ReactNode } from "react"
-import { ElementsFooter } from "../../components/headers/ElementsFooter"
-import { ElementsHeader } from "../../components/headers/ElementsHeader"
-import { Navigations } from "../../elements/Navigations"
+import { ReactNode } from "react";
+import { ElementsFooter } from "../../components/headers/ElementsFooter";
+import { ElementsHeader } from "../../components/headers/ElementsHeader";
+import { Navigations } from "../../elements/Navigations";
 
 export default function ElementsLayout({ children }: { children: ReactNode }) {
   return (
@@ -17,5 +17,5 @@ export default function ElementsLayout({ children }: { children: ReactNode }) {
 
       <ElementsFooter className="hidden" />
     </div>
-  )
+  );
 }

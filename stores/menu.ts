@@ -1,9 +1,9 @@
-import { create } from "zustand"
-import { devtools } from "zustand/middleware"
+import { create } from "zustand";
+import { devtools } from "zustand/middleware";
 
 interface MenuState {
-  active: boolean
-  setActive: (value: boolean) => void
+  active: boolean;
+  setActive: (value: boolean) => void;
 }
 
 export const useMenuStore = create<MenuState>()(
@@ -12,6 +12,6 @@ export const useMenuStore = create<MenuState>()(
       active: false,
       setActive: (active: boolean) => set({ active }),
     }),
-    { enabled: false }
-  )
-)
+    { enabled: false },
+  ),
+);

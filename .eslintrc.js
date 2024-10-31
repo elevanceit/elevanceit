@@ -1,3 +1,4 @@
+/*
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const fs = require("fs")
 
@@ -40,7 +41,7 @@ module.exports = {
         groups: ["external", "builtin", "internal", "sibling", "parent", "index"],
         pathGroups: [
           ...getDirectoriesToSort().map((singleDir) => ({
-            pattern: `${singleDir}/**`,
+            pattern: `${singleDir}/!**`,
             group: "internal",
           })),
           {
@@ -52,7 +53,7 @@ module.exports = {
             group: "internal",
           },
           {
-            pattern: "public/**",
+            pattern: "public/!**",
             group: "internal",
             position: "after",
           },
@@ -77,3 +78,31 @@ function getDirectories(path) {
     return fs.statSync(path + "/" + file).isDirectory()
   })
 }
+*/
+
+module.exports = {
+  extends: [
+    "eslint:recommended",
+    "plugin:@next/next/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+
+    // "plugin:sonarjs/recommended"
+  ],
+  parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: "module",
+  },
+  plugins: ["@typescript-eslint", "react", "prettier", "sonarjs"],
+  rules: {
+    "react/react-in-jsx-scope": "off", // Not needed with Next.js
+    "prettier/prettier": "error",
+  },
+  settings: {
+    react: {
+      version: "detect", // Automatically detect the version of React
+    },
+  },
+};

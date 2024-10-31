@@ -1,21 +1,21 @@
-import { faSpinnerThird } from "@fortawesome/pro-duotone-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { HTMLAttributes, useEffect, useMemo, useState } from "react"
-import { SubmitHandler, useForm } from "react-hook-form"
-import toast from "react-hot-toast"
-import { z } from "zod"
-import { FILE_SIZE_LIMIT } from "../../constants"
-import { useGoogleReCaptcha } from "../../hooks/useGoogleReCaptcha"
-import { useUpload } from "../../hooks/useUpload"
-import { cn } from "../../utils"
-import { Button } from "../Button"
-import { Field } from "../controls/Field"
-import { Form } from "../Form"
+import { HTMLAttributes, useEffect, useMemo, useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { faSpinnerThird } from "@fortawesome/pro-duotone-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import { FILE_SIZE_LIMIT } from "../../constants";
+import { useGoogleReCaptcha } from "../../hooks/useGoogleReCaptcha";
+import { useUpload } from "../../hooks/useUpload";
+import { cn } from "../../utils";
+import { Button } from "../Button";
+import { Form } from "../Form";
+import { Field } from "../controls/Field";
 
 interface Props extends HTMLAttributes<HTMLFormElement> {
-  preSelectedJob?: string
-  onComplete?: () => void
+  preSelectedJob?: string;
+  onComplete?: () => void;
 }
 
 const validationSchema = z.object({
@@ -27,14 +27,20 @@ const validationSchema = z.object({
   message: z.string().min(1, { message: "Message is required" }),
   file: z
     .any()
-    .refine((value) => (value?.[0]?.size || 0) / 1024 ** 2 > 0, "Attachment is required")
-    .refine((value) => (value?.[0]?.size || 0) / 1024 ** 2 <= FILE_SIZE_LIMIT, `Attachment ${FILE_SIZE_LIMIT}MB limit`),
+    .refine(
+      (value) => (value?.[0]?.size || 0) / 1024 ** 2 > 0,
+      "Attachment is required",
+    )
+    .refine(
+      (value) => (value?.[0]?.size || 0) / 1024 ** 2 <= FILE_SIZE_LIMIT,
+      `Attachment ${FILE_SIZE_LIMIT}MB limit`,
+    ),
   terms: z.literal(true, {
     errorMap: () => ({ message: "You must accept Terms and Conditions" }),
   }),
-})
+});
 
-type ValidationSchema = z.infer<typeof validationSchema>
+type ValidationSchema = z.infer<typeof validationSchema>;
 
 const subjects = {
   "seo-expert": "SEO Expert",
@@ -44,12 +50,17 @@ const subjects = {
   developer: "Developer / Engineer",
   "customer-support": "Customer Support",
   other: "Other",
-}
+};
 
-export function JoinUs({ preSelectedJob, onComplete, className, ...rest }: Props) {
-  const [submitting, setSubmitting] = useState(false)
+export function JoinUs({
+  preSelectedJob,
+  onComplete,
+  className,
+  ...rest
+}: Props) {
+  const [submitting, setSubmitting] = useState(false);
 
-  const { execute, executing } = useGoogleReCaptcha()
+  const { execute, executing } = useGoogleReCaptcha();
 
   // const { isUploading, upload } = useUpload()
 
@@ -61,7 +72,7 @@ export function JoinUs({ preSelectedJob, onComplete, className, ...rest }: Props
     formState: { errors },
   } = useForm<ValidationSchema>({
     resolver: zodResolver(validationSchema),
-  })
+  });
 
   // const joinUs = trpc.web.forms.joinUs.useMutation({
   //   async onSuccess() {
@@ -79,9 +90,9 @@ export function JoinUs({ preSelectedJob, onComplete, className, ...rest }: Props
   // })
 
   const onSubmit: SubmitHandler<ValidationSchema> = async (data) => {
-    if (!execute) return
+    if (!execute) return;
 
-    setSubmitting(true)
+    setSubmitting(true);
 
     // const [files, token] = await Promise.all([upload(data.file), execute()])
 
@@ -93,26 +104,30 @@ export function JoinUs({ preSelectedJob, onComplete, className, ...rest }: Props
     //   subject: data.subject,
     //   message: data.message,
     // })
-  }
+  };
 
-  const loading = submitting || executing // || isUploading || joinUs.isLoading
+  const loading = submitting || executing; // || isUploading || joinUs.isLoading
 
   const fieldsCV = useMemo(
     () => ({
       ...register("file"),
       accept: ".pdf, .csv, .xls, .xlsx, .doc, .docx, .rtf, .txt, .htm, .html",
     }),
-    [register]
-  )
+    [register],
+  );
 
   useEffect(() => {
     if (preSelectedJob) {
-      setValue("subject", preSelectedJob)
+      setValue("subject", preSelectedJob);
     }
-  }, [preSelectedJob, setValue])
+  }, [preSelectedJob, setValue]);
 
   return (
-    <Form className={cn("flex flex-col gap-4", className)} onSubmit={handleSubmit(onSubmit)} {...rest}>
+    <Form
+      className={cn("flex flex-col gap-4", className)}
+      onSubmit={handleSubmit(onSubmit)}
+      {...rest}
+    >
       <div className="text-2xl font-semibold">Apply here</div>
 
       <div className="-mx-4 flex flex-wrap">
@@ -169,9 +184,14 @@ export function JoinUs({ preSelectedJob, onComplete, className, ...rest }: Props
       <div>
         <Button type="submit" color="secondary" disabled={loading}>
           <span className={cn(loading && "invisible")}>Submit</span>
-          {loading && <FontAwesomeIcon icon={faSpinnerThird} className="absolute animate-spin" />}
+          {loading && (
+            <FontAwesomeIcon
+              icon={faSpinnerThird}
+              className="absolute animate-spin"
+            />
+          )}
         </Button>
       </div>
     </Form>
-  )
+  );
 }

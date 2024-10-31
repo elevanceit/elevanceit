@@ -1,9 +1,9 @@
-import { create } from "zustand"
-import { devtools, persist } from "zustand/middleware"
+import { create } from "zustand";
+import { devtools, persist } from "zustand/middleware";
 
 interface ConfettiState {
-  isConfetti: boolean
-  setConfetti: (value: boolean) => void
+  isConfetti: boolean;
+  setConfetti: (value: boolean) => void;
 }
 
 export const useConfettiStore = create<ConfettiState>()(
@@ -15,8 +15,8 @@ export const useConfettiStore = create<ConfettiState>()(
       }),
       {
         name: "confetti-storage",
-      }
+      },
     ),
-    { enabled: false }
-  )
-)
+    { enabled: false },
+  ),
+);

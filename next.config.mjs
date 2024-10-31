@@ -1,26 +1,37 @@
 import withBundleAnalyzer from "@next/bundle-analyzer"
+import createMDX from "@next/mdx"
 import withPlugins from "next-compose-plugins"
 import { env } from "./env.mjs"
 
 /**
  * @type {import('next').NextConfig}
  */
-const config = withPlugins([[withBundleAnalyzer({ enabled: env.ANALYZE })]], {
-  reactStrictMode: true,
-  logging: {
-    fetches: {
-      fullUrl: true,
+const nextConfig = withPlugins(
+  [
+    [
+      withBundleAnalyzer({ enabled: env.ANALYZE }),
+      createMDX({
+        enabled: true,
+      }),
+    ],
+  ],
+  {
+    reactStrictMode: true,
+    logging: {
+      fetches: {
+        fullUrl: true,
+      },
     },
-  },
-  experimental: { instrumentationHook: true },
-  rewrites() {
-    return [
-      { source: "/healthz", destination: "/api/health" },
-      { source: "/api/healthz", destination: "/api/health" },
-      { source: "/health", destination: "/api/health" },
-      { source: "/ping", destination: "/api/health" },
-    ]
-  },
-})
+    experimental: { instrumentationHook: true },
+    rewrites() {
+      return [
+        { source: "/healthz", destination: "/api/health" },
+        { source: "/api/healthz", destination: "/api/health" },
+        { source: "/health", destination: "/api/health" },
+        { source: "/ping", destination: "/api/health" },
+      ]
+    },
+  }
+)
 
-export default config
+export default nextConfig

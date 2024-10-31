@@ -1,6 +1,6 @@
-import { Metadata } from "next"
-import { Card } from "../../../components/Card"
-import { Headline } from "../../../elements/Headline"
+import { Metadata } from "next";
+import { Card } from "../../../components/Card";
+import { Headline } from "../../../elements/Headline";
 
 export const metadata: Metadata = {
   title: "",
@@ -17,14 +17,17 @@ export const metadata: Metadata = {
       },
     ],
   },
-}
+};
 
 export default function Page() {
   return (
     <section className="flex w-full flex-col gap-6">
-      <Headline title="Badges">Documentation and examples for badges, our small count and labeling component.</Headline>
+      <Headline title="Badges">
+        Documentation and examples for badges, our small count and labeling
+        component.
+      </Headline>
 
       <Card>Badges</Card>
     </section>
-  )
+  );
 }

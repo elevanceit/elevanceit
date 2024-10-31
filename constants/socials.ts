@@ -1,3 +1,3 @@
-import { Linker } from "../types"
+import { Linker } from "../types";
 
-export const SOCIALS: Linker[] = []
+export const SOCIALS: Linker[] = [];

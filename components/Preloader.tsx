@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import { HTMLAttributes, useEffect, useState } from "react"
-import { cn } from "../utils"
+import { HTMLAttributes, useEffect, useState } from "react";
+import { cn } from "../utils";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
-  nonce?: string
+  nonce?: string;
 }
 
 export function Preloader({ nonce, className, ...rest }: Props) {
-  const [loaded, setLoaded] = useState(false)
+  const [loaded, setLoaded] = useState(false);
 
   // const router = useRouter();
   //
@@ -75,15 +75,15 @@ export function Preloader({ nonce, className, ...rest }: Props) {
   // }, [])
 
   useEffect(() => {
-    setLoaded(true)
-  }, [])
+    setLoaded(true);
+  }, []);
 
   return (
     <div
       className={cn(
         "fixed bottom-0 left-0 right-0 top-0 z-[9999] flex items-center justify-center bg-black transition duration-100",
         loaded && "pointer-events-none opacity-0",
-        className
+        className,
       )}
       {...rest}
     >
@@ -123,5 +123,5 @@ export function Preloader({ nonce, className, ...rest }: Props) {
       {/*<div className="glow" />*/}
       {!loaded && <div className="loader" />}
     </div>
-  )
+  );
 }

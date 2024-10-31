@@ -1,4 +1,4 @@
-import { Metadata } from "next"
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "",
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
       },
     ],
   },
-}
+};
 
 export default function Page() {
-  return <section className="">123</section>
+  return <section className="">123</section>;
 }

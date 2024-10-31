@@ -1,10 +1,10 @@
-import { pick } from "lodash"
-import { Metadata } from "next"
-import colors from "tailwindcss/colors"
-import { Card } from "../../../components/Card"
-import { Color } from "../../../components/Color"
-import { Headline } from "../../../elements/Headline"
-import tailwind from "../../../tailwind.config"
+import { Metadata } from "next";
+import { pick } from "lodash";
+import colors from "tailwindcss/colors";
+import { Card } from "../../../components/Card";
+import { Color } from "../../../components/Color";
+import { Headline } from "../../../elements/Headline";
+import tailwind from "../../../tailwind.config";
 
 export const metadata: Metadata = {
   title: "",
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
       },
     ],
   },
-}
+};
 
-const themeColors = tailwind?.theme?.extend?.colors || {}
+const themeColors = tailwind?.theme?.extend?.colors || {};
 
 const tailwindColors = pick(colors, [
   "slate",
@@ -48,14 +48,14 @@ const tailwindColors = pick(colors, [
   "fuchsia",
   "pink",
   "rose",
-])
+]);
 
 export default function Page() {
   return (
     <section className="flex w-full flex-col gap-6">
       <Headline title="Colors">
-        Extensive color system that themes our styles and components. This enables more comprehensive customization and
-        extension for any project.
+        Extensive color system that themes our styles and components. This
+        enables more comprehensive customization and extension for any project.
       </Headline>
 
       <Card header="Theme Colors">
@@ -68,7 +68,12 @@ export default function Page() {
 
               <div className="flex w-full flex-wrap gap-3">
                 {Object.entries(colors).map(([value, color]) => (
-                  <Color key={value} color={color as string} name={name} value={value} />
+                  <Color
+                    key={value}
+                    color={color as string}
+                    name={name}
+                    value={value}
+                  />
                 ))}
               </div>
             </div>
@@ -94,5 +99,5 @@ export default function Page() {
         </div>
       </Card>
     </section>
-  )
+  );
 }
