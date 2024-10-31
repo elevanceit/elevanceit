@@ -29,8 +29,8 @@ export const HAS_PRELOADER = true
 export const FILE_SIZE_LIMIT = 2
 export const FILES_COUNT_LIMIT = 10
 
+export * from "./elements"
 export * from "./footers"
 export * from "./headers"
-export * from "./elements"
 export * from "./socials"
 export * from "./toaster"

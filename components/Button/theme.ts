@@ -1,5 +1,4 @@
 import { tv } from "tailwind-variants"
-import { BUTTON_VARIANTS } from "../../enums"
 
 export const ButtonTheme = tv({
   base: "rounded-full border bg-opacity-100 px-4 py-2.5 font-medium transition-all duration-300 hover:bg-opacity-100 hover:text-white hover:scale-105 active:opacity-90 disabled:cursor-not-allowed disabled:opacity-80 dark:bg-opacity-10 dark:hover:bg-opacity-100",

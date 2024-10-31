@@ -1,6 +1,5 @@
 import { HTMLAttributes, useState } from "react"
 import { SubmitHandler, useForm } from "react-hook-form"
-import toast from "react-hot-toast"
 import { faSpinnerThird } from "@fortawesome/pro-duotone-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { zodResolver } from "@hookform/resolvers/zod"

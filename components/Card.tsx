@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes, ReactNode, useEffect, useState } from "react"
+import { FC, HTMLAttributes, ReactNode } from "react"
 import { cn } from "../utils"
 
 interface Props extends HTMLAttributes<HTMLDivElement> {

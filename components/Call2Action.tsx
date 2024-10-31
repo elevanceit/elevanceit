@@ -3,8 +3,6 @@
 import { FC, HTMLAttributes } from "react"
 import { usePathname } from "next/navigation"
 import { SignInButton } from "@clerk/nextjs"
-import { faUnlock } from "@fortawesome/pro-regular-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { cn } from "../utils"
 
 // import { useMe } from "../contexts";

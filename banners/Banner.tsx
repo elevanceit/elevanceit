@@ -1,9 +1,9 @@
 "use client"
 
-import { FC, HTMLAttributes, ReactNode, useCallback, useEffect, useRef, useState } from "react"
+import { FC, HTMLAttributes, ReactNode, useCallback, useRef } from "react"
 import Image, { StaticImageData } from "next/image"
 import * as htmlToImage from "html-to-image"
-import { cn, wait } from "../utils"
+import { cn } from "../utils"
 
 interface Props extends HTMLAttributes<HTMLButtonElement> {
   image?: StaticImageData
