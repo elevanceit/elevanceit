@@ -14667,7 +14667,7 @@ __metadata:
     next-themes: "npm:0.3.0"
     npm-only-allow: "npm:1.2.6"
     nprogress: "npm:0.2.0"
-    nuqs: "npm:2.1.0"
+    nuqs: "npm:2.1.1"
     patch-package: "npm:8.0.0"
     photoswipe: "npm:5.4.4"
     postcss: "npm:8.4.47"
@@ -22219,9 +22219,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuqs@npm:2.1.0":
-  version: 2.1.0
-  resolution: "nuqs@npm:2.1.0"
+"nuqs@npm:2.1.1":
+  version: 2.1.1
+  resolution: "nuqs@npm:2.1.1"
   dependencies:
     mitt: "npm:^3.0.1"
   peerDependencies:
@@ -22236,7 +22236,7 @@ __metadata:
       optional: true
     react-router-dom:
       optional: true
-  checksum: 10c0/8926750ce9d6eb039ce16e91b2d44acdf7cf12e2155e59b2528638222babe02b29908ca323670ba6cfe74f9a177b1ca5376f4c70466097f80fa21774121aa7ca
+  checksum: 10c0/ceb674c1bf106db27f1f16494d70baa93f962da16b94a2ddd18a18cffa122560ad28dae2be3affbecd802e0c73d8eaa95d580a1dcd1a4e395bea4c81651ea90b
   languageName: node
   linkType: hard
 
