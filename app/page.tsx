@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Next.js Enterprise Boilerplate",
+  title: "Elevance Innovation Technology",
   twitter: {
     card: "summary_large_image",
   },
