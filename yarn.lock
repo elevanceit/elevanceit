@@ -2957,57 +2957,58 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@clerk/backend@npm:1.15.1":
-  version: 1.15.1
-  resolution: "@clerk/backend@npm:1.15.1"
+"@clerk/backend@npm:1.15.2":
+  version: 1.15.2
+  resolution: "@clerk/backend@npm:1.15.2"
   dependencies:
-    "@clerk/shared": "npm:2.10.1"
-    "@clerk/types": "npm:4.28.0"
+    "@clerk/shared": "npm:2.11.0"
+    "@clerk/types": "npm:4.29.0"
     cookie: "npm:0.7.0"
     snakecase-keys: "npm:5.4.4"
     tslib: "npm:2.4.1"
-  checksum: 10c0/fd0d00a78f66ec1255deffe9b6d1b50485d896b69f8728efaad3b979899bd2bd3ba5df1fd377670a875c4b797d0c61826c7d3076bf8c466993d0363dbf46adca
+  checksum: 10c0/b3162b16b955eca43450ffd832f33b0c2555f9aa08a6c7194fca3fe24536ff28f9fd53e3b967fc077c59e76a78987e1390d717eaff3453fcf4935c17a873f47d
   languageName: node
   linkType: hard
 
-"@clerk/clerk-react@npm:5.13.1":
-  version: 5.13.1
-  resolution: "@clerk/clerk-react@npm:5.13.1"
+"@clerk/clerk-react@npm:5.14.0":
+  version: 5.14.0
+  resolution: "@clerk/clerk-react@npm:5.14.0"
   dependencies:
-    "@clerk/shared": "npm:2.10.1"
-    "@clerk/types": "npm:4.28.0"
+    "@clerk/shared": "npm:2.11.0"
+    "@clerk/types": "npm:4.29.0"
     tslib: "npm:2.4.1"
   peerDependencies:
-    react: ">=18 || >=19.0.0-beta"
-    react-dom: ">=18 || >=19.0.0-beta"
-  checksum: 10c0/acf1d8bf2a6b94c2c99c25b4612e0a85d2d847f186b3d6db317dafc98a6d35090b322705e249f86adff0dcdd16fca05d53710d0512dea48cca37f715fcf62358
+    react: ^18 || ^19.0.0-0
+    react-dom: ^18 || ^19.0.0-0
+  checksum: 10c0/d587569d9c1c1ef6b74e292b94814dcd46f0c7d88b9e82502c5ad3d4dc3a3b68cbeee4df822895f798adad2722855d662c6dd05bb1234809dca886405e372eb2
   languageName: node
   linkType: hard
 
-"@clerk/nextjs@npm:6.0.2":
-  version: 6.0.2
-  resolution: "@clerk/nextjs@npm:6.0.2"
+"@clerk/nextjs@npm:6.1.0":
+  version: 6.1.0
+  resolution: "@clerk/nextjs@npm:6.1.0"
   dependencies:
-    "@clerk/backend": "npm:1.15.1"
-    "@clerk/clerk-react": "npm:5.13.1"
-    "@clerk/shared": "npm:2.10.1"
-    "@clerk/types": "npm:4.28.0"
+    "@clerk/backend": "npm:1.15.2"
+    "@clerk/clerk-react": "npm:5.14.0"
+    "@clerk/shared": "npm:2.11.0"
+    "@clerk/types": "npm:4.29.0"
     crypto-js: "npm:4.2.0"
+    ezheaders: "npm:0.1.0"
     server-only: "npm:0.0.1"
     tslib: "npm:2.4.1"
   peerDependencies:
-    next: ^13.5.4 || ^14.0.3 || >=15.0.0-rc
-    react: ">=18 || >=19.0.0-beta"
-    react-dom: ">=18 || >=19.0.0-beta"
-  checksum: 10c0/e67ac04a0e1585c577d3619eabd4d88270179ec925249a23e0c11316b906cdbdc6c71cee04193c81af0a45deaaa6e05f576cef7de054b04e4563eb17f6a995a8
+    next: ^13.5.4 || ^14.0.3 || ^15.0.0
+    react: ^18 || ^19.0.0-0
+    react-dom: ^18 || ^19.0.0-0
+  checksum: 10c0/499d67641a830c24e7e5c0a139979800d3e210a71a6b39b4da41a2f760e09e6841e53521ad9755fe143e33a14d1dcfdce3304b2b8a33df9135c0e7f291f056b0
   languageName: node
   linkType: hard
 
-"@clerk/shared@npm:2.10.1":
-  version: 2.10.1
-  resolution: "@clerk/shared@npm:2.10.1"
+"@clerk/shared@npm:2.11.0":
+  version: 2.11.0
+  resolution: "@clerk/shared@npm:2.11.0"
   dependencies:
-    "@clerk/types": "npm:4.28.0"
+    "@clerk/types": "npm:4.29.0"
     glob-to-regexp: "npm:0.4.1"
     js-cookie: "npm:3.0.5"
     std-env: "npm:^3.7.0"
@@ -3020,16 +3021,16 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: 10c0/e04579d4f7befe0716b42d114b5932958c52078e2d7b398f350182c856ddf9948cceaaecf477eeeaa606bf582e379d9d46817ee0ab1e384c2ec37c43131c26a1
+  checksum: 10c0/3c1bd2b7a31fb48221bcf783d50c890abbdb26260677171d9d8ce8c52e4b36c7f8652a09283bf87a6556998f423614d201429f146cbe8263e7f9ad3bc750f178
   languageName: node
   linkType: hard
 
-"@clerk/types@npm:4.28.0":
-  version: 4.28.0
-  resolution: "@clerk/types@npm:4.28.0"
+"@clerk/types@npm:4.29.0":
+  version: 4.29.0
+  resolution: "@clerk/types@npm:4.29.0"
   dependencies:
     csstype: "npm:3.1.1"
-  checksum: 10c0/fa9b61d0800bace7b11e492f755aef94b594cce33da6af6d27271d19948691549c1d0ae00ce8ca19ef7cd7d582857eec3f3438f972a0949359acffecb0ae08f1
+  checksum: 10c0/f0720a18299daec286cc7d5a05bd19aa9525a4969548ded41d599cc918c67209372cb6e08db194d6266f1f7811e70962488846a08053dddf358375977f765f88
   languageName: node
   linkType: hard
 
@@ -9388,7 +9389,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/jest-dom@npm:*, @testing-library/jest-dom@npm:6.6.2":
+"@testing-library/jest-dom@npm:*":
   version: 6.6.2
   resolution: "@testing-library/jest-dom@npm:6.6.2"
   dependencies:
@@ -9415,6 +9416,21 @@ __metadata:
     lodash: "npm:^4.17.21"
     redent: "npm:^3.0.0"
   checksum: 10c0/fd5936a547f04608d8de15a7de3ae26516f21023f8f45169b10c8c8847015fd20ec259b7309f08aa1031bcbc37c6e5e6f532d1bb85ef8f91bad654193ec66a4c
+  languageName: node
+  linkType: hard
+
+"@testing-library/jest-dom@npm:6.6.3":
+  version: 6.6.3
+  resolution: "@testing-library/jest-dom@npm:6.6.3"
+  dependencies:
+    "@adobe/css-tools": "npm:^4.4.0"
+    aria-query: "npm:^5.0.0"
+    chalk: "npm:^3.0.0"
+    css.escape: "npm:^1.5.1"
+    dom-accessibility-api: "npm:^0.6.3"
+    lodash: "npm:^4.17.21"
+    redent: "npm:^3.0.0"
+  checksum: 10c0/5566b6c0b7b0709bc244aec3aa3dc9e5f4663e8fb2b99d8cd456fc07279e59db6076cbf798f9d3099a98fca7ef4cd50e4e1f4c4dec5a60a8fad8d24a638a5bf6
   languageName: node
   linkType: hard
 
@@ -9967,12 +9983,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:22.8.5":
-  version: 22.8.5
-  resolution: "@types/node@npm:22.8.5"
+"@types/node@npm:22.8.6":
+  version: 22.8.6
+  resolution: "@types/node@npm:22.8.6"
   dependencies:
     undici-types: "npm:~6.19.8"
-  checksum: 10c0/5e43553026c83f18bfa381d35c8fd608e69d12d0f0fe4601e8bb98b651a3b240be9d66c1f2f4decdbebb41d55b18e89238b02f3992d820d89801b9b3625ba8ab
+  checksum: 10c0/d3a11f2549234a91a4c5d0ff35ab4bdcb7ba34db4d3f1d189be39b8bd41c19aac98d117150a95a9c5a9d45b1014135477ea240b2b8317c86ae3d3cf1c3b3f8f4
   languageName: node
   linkType: hard
 
@@ -14317,8 +14333,8 @@ __metadata:
     "@babel/plugin-syntax-flow": "npm:7.26.0"
     "@babel/plugin-transform-optional-chaining": "npm:7.25.9"
     "@babel/plugin-transform-react-jsx": "npm:7.25.9"
-    "@clerk/nextjs": "npm:6.0.2"
-    "@clerk/types": "npm:4.28.0"
+    "@clerk/nextjs": "npm:6.1.0"
+    "@clerk/types": "npm:4.29.0"
     "@commitlint/cli": "npm:19.5.0"
     "@commitlint/config-conventional": "npm:19.5.0"
     "@commitlint/prompt-cli": "npm:19.5.0"
@@ -14409,7 +14425,7 @@ __metadata:
     "@tailwindcss/typography": "npm:0.5.15"
     "@tanstack/react-query": "npm:5.59.16"
     "@tanstack/react-query-devtools": "npm:5.59.16"
-    "@testing-library/jest-dom": "npm:6.6.2"
+    "@testing-library/jest-dom": "npm:6.6.3"
     "@testing-library/react": "npm:16.0.1"
     "@testing-library/user-event": "npm:14.5.2"
     "@total-typescript/ts-reset": "npm:0.6.1"
@@ -14424,7 +14440,7 @@ __metadata:
     "@types/lodash": "npm:4.17.13"
     "@types/md5": "npm:2.3.5"
     "@types/mdx": "npm:2.0.13"
-    "@types/node": "npm:22.8.5"
+    "@types/node": "npm:22.8.6"
     "@types/nprogress": "npm:0.2.3"
     "@types/react": "npm:18.3.12"
     "@types/react-dom": "npm:18.3.1"
@@ -14466,7 +14482,7 @@ __metadata:
     eslint-plugin-turbo: "npm:2.2.3"
     eslint-plugin-unused-imports: "npm:4.1.4"
     fetch-mock: "npm:12.0.2"
-    framer-motion: "npm:11.11.10"
+    framer-motion: "npm:11.11.11"
     gray-matter: "npm:4.0.3"
     gzip-size: "npm:7.0.0"
     html-to-image: "npm:1.11.11"
@@ -14482,7 +14498,7 @@ __metadata:
     mini-css-extract-plugin: "npm:2.9.1"
     mkdirp: "npm:3.0.1"
     mongodb: "npm:6.10.0"
-    mongoose: "npm:8.7.3"
+    mongoose: "npm:8.8.0"
     nanoid: "npm:5.0.8"
     next: "npm:15.0.2"
     next-compose-plugins: "npm:2.2.1"
@@ -14546,7 +14562,7 @@ __metadata:
     tsparticles: "npm:2.12.0"
     tsparticles-engine: "npm:2.12.0"
     typescript: "npm:5.6.3"
-    webpack: "npm:5.95.0"
+    webpack: "npm:5.96.0"
     zod: "npm:3.23.8"
     zustand: "npm:5.0.1"
   languageName: unknown
@@ -16054,6 +16070,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ezheaders@npm:0.1.0":
+  version: 0.1.0
+  resolution: "ezheaders@npm:0.1.0"
+  peerDependencies:
+    next: ^13.5.4 || ^14 || ^15
+  checksum: 10c0/e1f824548ffb2f993cf6abb60f9d10d960a6c2960b0f5aea2682c2eab8bea3e9b8036b9d6b33e6ae7fecdbb0e42cd7b9390d461c2ddd8a0fc9c7de8b6bab2d6a
+  languageName: node
+  linkType: hard
+
 "fast-deep-equal@npm:^3.1.1, fast-deep-equal@npm:^3.1.3":
   version: 3.1.3
   resolution: "fast-deep-equal@npm:3.1.3"
@@ -16540,9 +16565,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:11.11.10":
-  version: 11.11.10
-  resolution: "framer-motion@npm:11.11.10"
+"framer-motion@npm:11.11.11":
+  version: 11.11.11
+  resolution: "framer-motion@npm:11.11.11"
   dependencies:
     tslib: "npm:^2.4.0"
   peerDependencies:
@@ -16556,7 +16581,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: 10c0/0f8cdcfad0b1bb371db70a93605da17f191484b47e197387349c5f30b848f799d35e51ec8b54245756e5652903607a051c718fc16997616cf0cd97b1ee642871
+  checksum: 10c0/9a9e86d0e211809a184c0ee9fb3b1d692244103c12b6a666581b782dba13e00363c383e590c503cf06cde49626439a5e92a06f40b075ed3139dd8c54375b7796
   languageName: node
   linkType: hard
 
@@ -21118,7 +21143,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongodb@npm:6.10.0":
+"mongodb@npm:6.10.0, mongodb@npm:~6.10.0":
   version: 6.10.0
   resolution: "mongodb@npm:6.10.0"
   dependencies:
@@ -21152,52 +21177,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mongodb@npm:6.9.0":
-  version: 6.9.0
-  resolution: "mongodb@npm:6.9.0"
-  dependencies:
-    "@mongodb-js/saslprep": "npm:^1.1.5"
-    bson: "npm:^6.7.0"
-    mongodb-connection-string-url: "npm:^3.0.0"
-  peerDependencies:
-    "@aws-sdk/credential-providers": ^3.188.0
-    "@mongodb-js/zstd": ^1.1.0
-    gcp-metadata: ^5.2.0
-    kerberos: ^2.0.1
-    mongodb-client-encryption: ">=6.0.0 <7"
-    snappy: ^7.2.2
-    socks: ^2.7.1
-  peerDependenciesMeta:
-    "@aws-sdk/credential-providers":
-      optional: true
-    "@mongodb-js/zstd":
-      optional: true
-    gcp-metadata:
-      optional: true
-    kerberos:
-      optional: true
-    mongodb-client-encryption:
-      optional: true
-    snappy:
-      optional: true
-    socks:
-      optional: true
-  checksum: 10c0/2b6c241a3361d014464a2c446fc9a71bae7270a9d8f777ffb8d69f0decfc6047f7dd6315c76caaa301fd61476948c3570b4b54a0866af5968e89b3cf5afa218e
-  languageName: node
-  linkType: hard
-
-"mongoose@npm:8.7.3":
-  version: 8.7.3
-  resolution: "mongoose@npm:8.7.3"
+"mongoose@npm:8.8.0":
+  version: 8.8.0
+  resolution: "mongoose@npm:8.8.0"
   dependencies:
     bson: "npm:^6.7.0"
     kareem: "npm:2.6.3"
-    mongodb: "npm:6.9.0"
+    mongodb: "npm:~6.10.0"
     mpath: "npm:0.9.0"
     mquery: "npm:5.0.0"
     ms: "npm:2.1.3"
     sift: "npm:17.1.3"
-  checksum: 10c0/c7dd536a69bf8a8c7a64e29195ec2ef5b59e58e1ae4718adefcd753ead0d9854ca1729b527c3839986c1325e89ad22c0068851f12f7e9946112128df0de11770
+  checksum: 10c0/008e8917aba89f62b6d154834ef04f1764980c826e5fe1dce8fe7c8cca520f3aea2150a2136de423ae94d523ac3be47307a29c8012f3dea73783731a8a2d23b8
   languageName: node
   linkType: hard
 
@@ -27965,7 +27956,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:5, webpack@npm:5.95.0":
+"webpack@npm:5":
   version: 5.95.0
   resolution: "webpack@npm:5.95.0"
   dependencies:
@@ -27998,6 +27989,41 @@ __metadata:
   bin:
     webpack: bin/webpack.js
   checksum: 10c0/b9e6d0f8ebcbf0632494ac0b90fe4acb8f4a9b83f7ace4a67a15545a36fe58599c912ab58e625e1bf58ab3b0916c75fe99da6196d412ee0cab0b5065edd84238
+  languageName: node
+  linkType: hard
+
+"webpack@npm:5.96.0":
+  version: 5.96.0
+  resolution: "webpack@npm:5.96.0"
+  dependencies:
+    "@types/estree": "npm:^1.0.6"
+    "@webassemblyjs/ast": "npm:^1.12.1"
+    "@webassemblyjs/wasm-edit": "npm:^1.12.1"
+    "@webassemblyjs/wasm-parser": "npm:^1.12.1"
+    acorn: "npm:^8.14.0"
+    browserslist: "npm:^4.24.0"
+    chrome-trace-event: "npm:^1.0.2"
+    enhanced-resolve: "npm:^5.17.1"
+    es-module-lexer: "npm:^1.2.1"
+    eslint-scope: "npm:5.1.1"
+    events: "npm:^3.2.0"
+    glob-to-regexp: "npm:^0.4.1"
+    graceful-fs: "npm:^4.2.11"
+    json-parse-even-better-errors: "npm:^2.3.1"
+    loader-runner: "npm:^4.2.0"
+    mime-types: "npm:^2.1.27"
+    neo-async: "npm:^2.6.2"
+    schema-utils: "npm:^3.2.0"
+    tapable: "npm:^2.1.1"
+    terser-webpack-plugin: "npm:^5.3.10"
+    watchpack: "npm:^2.4.1"
+    webpack-sources: "npm:^3.2.3"
+  peerDependenciesMeta:
+    webpack-cli:
+      optional: true
+  bin:
+    webpack: bin/webpack.js
+  checksum: 10c0/25ce25b8592c49cdb5dfba22587bbd0ee7144e6e16559aa75207eeb365736ee7e685d4b3ccafc3f3687f4f2e168d0c8766cf5fd0106648d5ef7acdfac30cc62d
   languageName: node
   linkType: hard
 

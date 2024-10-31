@@ -1,6 +1,12 @@
+export const URL = process.env.NEXT_PUBLIC_APP_URL
+  ? process.env.NEXT_PUBLIC_APP_URL
+  : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : "http://localhost:3000" // Default local URL
+
 export const WEBSITE = {
-  url: process.env.NEXT_PUBLIC_APP_URL,
-  image: `${process.env.NEXT_PUBLIC_APP_URL}/image.png`,
+  url: URL,
+  image: `${URL}/image.png`,
   color: "#000",
   name: "Elevance Innovation Technology",
   title: "Elevance Innovation Technology",

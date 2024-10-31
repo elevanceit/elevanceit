@@ -21,7 +21,6 @@ jobs:
     env:
       SKIP_ENV_VALIDATION: true
       MONGODB_URI: ${{ secrets.MONGODB_URI }}
-      NEXT_PUBLIC_APP_URL: ${{ secrets.NEXT_PUBLIC_APP_URL }}
       NEXT_PUBLIC_RECAPTCHA_SITE_KEY: ${{ secrets.NEXT_PUBLIC_RECAPTCHA_SITE_KEY }}
       RECAPTCHA_SECRET_KEY: ${{ secrets.RECAPTCHA_SECRET_KEY }}
       TELEGRAM_BOT: ${{ secrets.TELEGRAM_BOT }}
