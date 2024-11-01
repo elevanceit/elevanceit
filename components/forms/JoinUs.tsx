@@ -1,11 +1,14 @@
 import { HTMLAttributes, useEffect, useMemo, useState } from "react"
 import { SubmitHandler, useForm } from "react-hook-form"
+import toast from "react-hot-toast"
 import { faSpinnerThird } from "@fortawesome/pro-duotone-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 import { FILE_SIZE_LIMIT } from "../../constants"
 import { useGoogleReCaptcha } from "../../hooks/useGoogleReCaptcha"
+import { useUpload } from "../../hooks/useUpload"
+import { trpc } from "../../trpc/client"
 import { cn } from "../../utils"
 import { Button } from "../Button"
 import { Form } from "../Form"
@@ -49,7 +52,7 @@ export function JoinUs({ preSelectedJob, onComplete, className, ...rest }: Props
 
   const { execute, executing } = useGoogleReCaptcha()
 
-  // const { isUploading, upload } = useUpload()
+  const { isUploading, upload } = useUpload()
 
   const {
     setValue,
@@ -61,36 +64,36 @@ export function JoinUs({ preSelectedJob, onComplete, className, ...rest }: Props
     resolver: zodResolver(validationSchema),
   })
 
-  // const joinUs = trpc.web.forms.joinUs.useMutation({
-  //   async onSuccess() {
-  //     toast.success("Message sent successfully. We will get back to you shortly!")
-  //     reset()
-  //     onComplete?.()
-  //
-  //     setSubmitting(false)
-  //   },
-  //   async onError(error) {
-  //     toast.error(error.message)
-  //
-  //     setSubmitting(false)
-  //   },
-  // })
+  const joinUs = trpc.forms.joinUs.useMutation({
+    async onSuccess() {
+      toast.success("Message sent successfully. We will get back to you shortly!")
+      reset()
+      onComplete?.()
+
+      setSubmitting(false)
+    },
+    async onError(error) {
+      toast.error(error.message)
+
+      setSubmitting(false)
+    },
+  })
 
   const onSubmit: SubmitHandler<ValidationSchema> = async (data) => {
     if (!execute) return
 
     setSubmitting(true)
 
-    // const [files, token] = await Promise.all([upload(data.file), execute()])
+    const [files, token] = await Promise.all([upload(data.file), execute()])
 
-    // joinUs.mutate({
-    //   token,
-    //   file: files[0],
-    //   name: data.name,
-    //   email: data.email,
-    //   subject: data.subject,
-    //   message: data.message,
-    // })
+    joinUs.mutate({
+      token,
+      file: files[0],
+      name: data.name,
+      email: data.email,
+      subject: data.subject,
+      message: data.message,
+    })
   }
 
   const loading = submitting || executing // || isUploading || joinUs.isLoading

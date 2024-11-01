@@ -1,4 +1,5 @@
 import { ReactNode } from "react"
+import { Toaster } from "react-hot-toast"
 import { Montserrat } from "next/font/google"
 import { ClerkProvider } from "@clerk/nextjs"
 import { NuqsAdapter } from "nuqs/adapters/next/app"
@@ -6,7 +7,7 @@ import { Call2Action } from "../components/Call2Action"
 import { Cursor } from "../components/Cursor"
 import { Preloader } from "../components/Preloader"
 import { ToTop } from "../components/ToTop"
-import { HAS_CALL2ACTION, HAS_CURSOR, HAS_PRELOADER, HAS_TOTOP } from "../constants"
+import { HAS_CALL2ACTION, HAS_CURSOR, HAS_PRELOADER, HAS_TOTOP, toaster } from "../constants"
 import { ProgressProviders } from "../providers/progress"
 import { ThemeProvider } from "../providers/theme"
 import { TRPCProvider } from "../providers/trpc"
@@ -57,6 +58,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
                 <NuqsAdapter>
                   <ProgressProviders>
+                    <Toaster position="top-center" {...toaster} />
+
                     {HAS_CURSOR && <Cursor />}
 
                     {HAS_TOTOP && <ToTop />}

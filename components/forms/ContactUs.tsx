@@ -1,10 +1,12 @@
 import { HTMLAttributes, useState } from "react"
 import { SubmitHandler, useForm } from "react-hook-form"
+import toast from "react-hot-toast"
 import { faSpinnerThird } from "@fortawesome/pro-duotone-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 import { useGoogleReCaptcha } from "../../hooks/useGoogleReCaptcha"
+import { trpc } from "../../trpc/client"
 import { cn } from "../../utils"
 import { Button } from "../Button"
 import { Form } from "../Form"
@@ -49,27 +51,27 @@ export function ContactUs({ onComplete, className, ...rest }: Props) {
     resolver: zodResolver(validationSchema),
   })
 
-  // const contactUs = trpc.web.forms.contactUs.useMutation({
-  //   async onSuccess() {
-  //     toast.success("Message sent successfully. We will get back to you shortly!")
-  //     reset()
-  //     onComplete?.()
-  //   },
-  //   async onError(error) {
-  //     toast.error(error.message)
-  //   },
-  // })
+  const contactUs = trpc.forms.contactUs.useMutation({
+    async onSuccess() {
+      toast.success("Message sent successfully. We will get back to you shortly!")
+      reset()
+      onComplete?.()
+    },
+    async onError(error) {
+      toast.error(error.message)
+    },
+  })
 
   const onSubmit: SubmitHandler<ValidationSchema> = async (data) => {
     if (!execute) return
 
-    // contactUs.mutate({
-    //   token: await execute(),
-    //   name: data.name,
-    //   email: data.email,
-    //   subject: data.subject,
-    //   message: data.message,
-    // })
+    contactUs.mutate({
+      token: await execute(),
+      name: data.name,
+      email: data.email,
+      subject: data.subject,
+      message: data.message,
+    })
   }
 
   const isLoading = submitting || executing // || contactUs.isLoading
