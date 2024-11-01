@@ -1,4 +1,5 @@
 import { useCallback, useState } from "react"
+import { env } from "../env"
 
 // ---------------------------------------------------------------------------------------------------------------------
 
@@ -76,7 +77,7 @@ export const useGoogleReCaptcha = (options: Options = {}) => {
 
   const execute = useCallback(
     async (action?: string) => {
-      if (!process.env.NEXT_PUBLIC_RECAPTHA_SITE_KEY) return ""
+      if (!env.NEXT_PUBLIC_RECAPTHA_SITE_KEY) return ""
 
       setExecuting(true)
 
@@ -84,12 +85,12 @@ export const useGoogleReCaptcha = (options: Options = {}) => {
         const render = document.createElement("div")
         render.setAttribute("data-badge", "inline")
         render.setAttribute("data-size", "invisible")
-        render.setAttribute("data-sitekey", process.env.NEXT_PUBLIC_RECAPTHA_SITE_KEY)
+        render.setAttribute("data-sitekey", env.NEXT_PUBLIC_RECAPTHA_SITE_KEY)
         document.body.appendChild(render)
 
         const js = document.createElement("script")
         js.id = id
-        js.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTHA_SITE_KEY}`
+        js.src = `https://www.google.com/recaptcha/api.js?render=${env.NEXT_PUBLIC_RECAPTHA_SITE_KEY}`
         js.nonce = document.body.getAttribute("data-nonce") || undefined
         js.defer = true
         js.async = true
@@ -101,7 +102,7 @@ export const useGoogleReCaptcha = (options: Options = {}) => {
       return new Promise<string>((resolve) => {
         if (window.grecaptcha?.execute) {
           window.grecaptcha
-            .execute(process.env.NEXT_PUBLIC_RECAPTHA_SITE_KEY as string, {
+            .execute(env.NEXT_PUBLIC_RECAPTHA_SITE_KEY as string, {
               action,
             })
             .then((value: string) => {
@@ -115,7 +116,7 @@ export const useGoogleReCaptcha = (options: Options = {}) => {
               clearInterval(interval)
 
               window.grecaptcha
-                .execute(process.env.NEXT_PUBLIC_RECAPTHA_SITE_KEY as string, {
+                .execute(env.NEXT_PUBLIC_RECAPTHA_SITE_KEY as string, {
                   action,
                 })
                 .then((value: string) => {

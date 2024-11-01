@@ -1,4 +1,5 @@
 import mongoose, { connect } from "mongoose"
+import { env } from "../../env"
 
 mongoose.set("debug", function (collection, method, query, document) {
   // console.log("MONGO DB QUERY", collection, method, query, document);
@@ -23,7 +24,7 @@ export async function mongoConnect() {
   }
 
   if (!cached.promise) {
-    cached.promise = connect(process.env.MONGODB_URI!, {
+    cached.promise = connect(env.MONGODB_URI!, {
       bufferCommands: false,
       maxPoolSize: 10,
       minPoolSize: 4,

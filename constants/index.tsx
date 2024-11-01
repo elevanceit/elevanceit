@@ -1,7 +1,9 @@
-export const URL = process.env.NEXT_PUBLIC_APP_URL
-  ? process.env.NEXT_PUBLIC_APP_URL
-  : process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
+import { env } from "../env"
+
+export const URL = env.NEXT_PUBLIC_APP_URL
+  ? env.NEXT_PUBLIC_APP_URL
+  : env.VERCEL_URL
+    ? `https://${env.VERCEL_URL}`
     : "http://localhost:3000" // Default local URL
 
 export const WEBSITE = {

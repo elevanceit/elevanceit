@@ -2,6 +2,7 @@ import S3 from "aws-sdk/clients/s3"
 import * as path from "path"
 import { v4 as uuidv4 } from "uuid"
 import { z } from "zod"
+import { env } from "../../env"
 import { publicProcedure, router } from "../trpc"
 
 export const awsRouter = router({
@@ -21,7 +22,7 @@ export const awsRouter = router({
 
       return input.map((file) => {
         return s3.createPresignedPost({
-          Bucket: process.env.BUCKET_NAME,
+          Bucket: env.BUCKET_NAME,
           Fields: {
             key: `${uuidv4()}${path.extname(file.fileName)}`,
             "Content-Type": file.fileType,
