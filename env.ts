@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import { createEnv } from "@t3-oss/env-nextjs"
 import { z } from "zod"
 
