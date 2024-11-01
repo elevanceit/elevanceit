@@ -1,3 +1,5 @@
+"use client"
+
 import { HTMLAttributes, useEffect, useMemo, useState } from "react"
 import { SubmitHandler, useForm } from "react-hook-form"
 import toast from "react-hot-toast"
