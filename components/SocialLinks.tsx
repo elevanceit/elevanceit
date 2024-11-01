@@ -12,7 +12,7 @@ import {
   faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons"
-import { faLink } from "@fortawesome/pro-light-svg-icons"
+import { faGlobe } from "@fortawesome/pro-light-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { WEBSITE } from "../constants"
 import { cn } from "../utils"
@@ -69,7 +69,7 @@ export function SocialLinks({
   telegram = WEBSITE.telegram,
   facebook = WEBSITE.facebook,
   instagram = WEBSITE.instagram,
-  linkedin = "",
+  linkedin = WEBSITE.linkedin,
   reddit = "",
   github = WEBSITE.github,
   gitlab = "",
@@ -109,9 +109,9 @@ export function SocialLinks({
           aria-label="Website"
           href={website}
           target="_blank"
-          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100"
+          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100 hover:scale-110"
         >
-          {hasIcon && <FontAwesomeIcon icon={faLink} className={size} />}
+          {hasIcon && <FontAwesomeIcon icon={faGlobe} className={size} />}
           {hasLabel && <span>Website</span>}
         </Link>
       )}
@@ -121,7 +121,7 @@ export function SocialLinks({
           aria-label="Facebook"
           href={facebook}
           target="_blank"
-          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100"
+          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100 hover:scale-110"
         >
           {hasIcon && <FontAwesomeIcon icon={faFacebook} className={size} />}
           {hasLabel && <span>Facebook</span>}
@@ -133,7 +133,7 @@ export function SocialLinks({
           aria-label="Twitter"
           href={twitter}
           target="_blank"
-          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100"
+          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100 hover:scale-110"
         >
           {hasIcon && <FontAwesomeIcon icon={faTwitter} className={size} />}
           {hasLabel && <span>Twitter</span>}
@@ -145,7 +145,7 @@ export function SocialLinks({
           aria-label="Instagram"
           href={instagram}
           target="_blank"
-          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100"
+          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100 hover:scale-110"
         >
           {hasIcon && <FontAwesomeIcon icon={faInstagram} className={size} />}
           {hasLabel && <span>Instagram</span>}
@@ -157,7 +157,7 @@ export function SocialLinks({
           aria-label="Telegram"
           href={telegram}
           target="_blank"
-          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100"
+          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100 hover:scale-110"
         >
           {hasIcon && <FontAwesomeIcon icon={faTelegram} className={size} />}
           {hasLabel && <span>Telegram</span>}
@@ -169,7 +169,7 @@ export function SocialLinks({
           aria-label="LinkedIn"
           href={linkedin}
           target="_blank"
-          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100"
+          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100 hover:scale-110"
         >
           {hasIcon && <FontAwesomeIcon icon={faLinkedin} className={size} />}
           {hasLabel && <span>LinkedIn</span>}
@@ -181,7 +181,7 @@ export function SocialLinks({
           aria-label="Discord"
           href={discord}
           target="_blank"
-          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100"
+          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100 hover:scale-110"
         >
           {hasIcon && <FontAwesomeIcon icon={faDiscord} className={size} />}
           {hasLabel && <span>Discord</span>}
@@ -193,7 +193,7 @@ export function SocialLinks({
           aria-label="Github"
           href={github}
           target="_blank"
-          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100"
+          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100 hover:scale-110"
         >
           {hasIcon && <FontAwesomeIcon icon={faGithub} className={size} />}
           {hasLabel && <span>Github</span>}
@@ -205,7 +205,7 @@ export function SocialLinks({
           aria-label="Pinterest"
           href={pinterest}
           target="_blank"
-          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100"
+          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100 hover:scale-110"
         >
           {hasIcon && <FontAwesomeIcon icon={faPinterest} className={size} />}
           {hasLabel && <span>Pinterest</span>}
@@ -217,7 +217,7 @@ export function SocialLinks({
           aria-label="YouTube"
           href={youtube}
           target="_blank"
-          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100"
+          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100 hover:scale-110"
         >
           {hasIcon && <FontAwesomeIcon icon={faYoutube} className={size} />}
           {hasLabel && <span>YouTube</span>}
@@ -229,7 +229,7 @@ export function SocialLinks({
           aria-label="Linktr"
           href={linktr}
           target="_blank"
-          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100"
+          className="hover:text-lightish-green flex items-center gap-2 p-3 opacity-75 duration-200 ease-in-out hover:opacity-100 hover:scale-110"
         >
           {hasIcon && <FontAwesomeIcon icon={faStaylinked} className={size} />}
           {hasLabel && <span>Linktr</span>}

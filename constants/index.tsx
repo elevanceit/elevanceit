@@ -11,20 +11,20 @@ export const WEBSITE = {
   name: "Elevance Innovation Technology",
   title: "Elevance Innovation Technology",
   email: "dmitrii.selikhov@gmail.com",
-  telegram: "https://t.me/idimetrix",
+  telegram: "https://t.me/ElevanceIT",
   description: "Elevance Innovation technologies",
   keywords: [].join(", "),
   about: "Elevance Innovation technologies",
   phone: null,
   discord: "",
-  twitter: "https://x.com/idimetrix",
+  twitter: "https://x.com/elevanceit",
   facebook: "",
   instagram: "",
   pinterest: "",
   linktr: "",
   youtube: "",
   linkedin: "https://www.linkedin.com/company/elevance-innovation-technology",
-  github: "https://github.com/idimetrix",
+  github: "https://github.com/elevanceit",
 }
 
 export const HAS_CURSOR = false

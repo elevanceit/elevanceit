@@ -1,5 +1,7 @@
+import { Suspense } from "react"
 import { Metadata } from "next"
-import { Soon } from "../widgets/Soon"
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
+import { Servers } from "../../../components/Servers"
 
 export const metadata: Metadata = {
   title: "Elevance Innovation Technology",
@@ -20,8 +22,16 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <section className="flex min-h-screen w-full items-center justify-center">
-      <Soon />
+    <section className="">
+      <Suspense fallback={<div>Loading...</div>}>
+        <Servers />
+      </Suspense>
+      <SignedOut>
+        <SignInButton />
+      </SignedOut>
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
     </section>
   )
 }
