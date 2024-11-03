@@ -19,3 +19,7 @@ https://fontawesome.com/search?q=
 ## Sources
 
 https://github.com/themesberg/flowbite-react
+
+## Menu
+
+https://www.npmjs.com/package/cmdk
