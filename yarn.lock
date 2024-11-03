@@ -3531,7 +3531,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.24.4":
+"@babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.24.4, @babel/runtime@npm:^7.25.0":
   version: 7.26.0
   resolution: "@babel/runtime@npm:7.26.0"
   dependencies:
@@ -4663,6 +4663,98 @@ __metadata:
   version: 0.2.8
   resolution: "@floating-ui/utils@npm:0.2.8"
   checksum: 10c0/a8cee5f17406c900e1c3ef63e3ca89b35e7a2ed645418459a73627b93b7377477fc888081011c6cd177cac45ec2b92a6cab018c14ea140519465498dddd2d3f9
+  languageName: node
+  linkType: hard
+
+"@formatjs/ecma402-abstract@npm:2.2.2":
+  version: 2.2.2
+  resolution: "@formatjs/ecma402-abstract@npm:2.2.2"
+  dependencies:
+    "@formatjs/fast-memoize": "npm:2.2.3"
+    "@formatjs/intl-localematcher": "npm:0.5.7"
+    tslib: "npm:2"
+  checksum: 10c0/dc712dd9959c9caa161282e3fb8f4a45c7368c4ada07576619d22b72678ece83459d6ec8b5ac3eee7def3b4398b68483c0ee91b49241024b41906333fd94ce21
+  languageName: node
+  linkType: hard
+
+"@formatjs/fast-memoize@npm:2.2.3":
+  version: 2.2.3
+  resolution: "@formatjs/fast-memoize@npm:2.2.3"
+  dependencies:
+    tslib: "npm:2"
+  checksum: 10c0/f1004c3b280de7e362bd37c5f48ff34c2ba1d6271d4a7b695fed561d1201a3379397824d8bffbf15fecee344d1e70398393bbb04297f242692310a305f12e75b
+  languageName: node
+  linkType: hard
+
+"@formatjs/icu-messageformat-parser@npm:2.9.2":
+  version: 2.9.2
+  resolution: "@formatjs/icu-messageformat-parser@npm:2.9.2"
+  dependencies:
+    "@formatjs/ecma402-abstract": "npm:2.2.2"
+    "@formatjs/icu-skeleton-parser": "npm:1.8.6"
+    tslib: "npm:2"
+  checksum: 10c0/5f65377e56a2f0426240f05c015584b629713f0c9e1b7bc6db78c6d2e94b4d28bdd4c674ee32be695e493cd2f80a8168b7cd3c64a23ec36f9e18db2ae080e51b
+  languageName: node
+  linkType: hard
+
+"@formatjs/icu-skeleton-parser@npm:1.8.6":
+  version: 1.8.6
+  resolution: "@formatjs/icu-skeleton-parser@npm:1.8.6"
+  dependencies:
+    "@formatjs/ecma402-abstract": "npm:2.2.2"
+    tslib: "npm:2"
+  checksum: 10c0/16993372de234aed52a75877247d911125e063aef77daf779e839a3c7a1213b37ffc8c95350375d303e43e30245711a0db693c4d856e6b0c2f3402644a8fb72d
+  languageName: node
+  linkType: hard
+
+"@formatjs/intl-displaynames@npm:6.8.2":
+  version: 6.8.2
+  resolution: "@formatjs/intl-displaynames@npm:6.8.2"
+  dependencies:
+    "@formatjs/ecma402-abstract": "npm:2.2.2"
+    "@formatjs/intl-localematcher": "npm:0.5.7"
+    tslib: "npm:2"
+  checksum: 10c0/52f3e7f74f9ce114860e235d66889f0cea559df060a879852613f76c673a355f0fc7ebe7d173f058dbbd9e760b57816a3b09a1e447448fef262abc76332bc132
+  languageName: node
+  linkType: hard
+
+"@formatjs/intl-listformat@npm:7.7.2":
+  version: 7.7.2
+  resolution: "@formatjs/intl-listformat@npm:7.7.2"
+  dependencies:
+    "@formatjs/ecma402-abstract": "npm:2.2.2"
+    "@formatjs/intl-localematcher": "npm:0.5.7"
+    tslib: "npm:2"
+  checksum: 10c0/d42fa043380252f11e300c696f6b366f817c93cac6d9aabc6dc96fb8efcfbc2873b11adac5928e4e1ce7eb1482bbb22b76a5a8520ef7f742ae23863b6edaa088
+  languageName: node
+  linkType: hard
+
+"@formatjs/intl-localematcher@npm:0.5.7":
+  version: 0.5.7
+  resolution: "@formatjs/intl-localematcher@npm:0.5.7"
+  dependencies:
+    tslib: "npm:2"
+  checksum: 10c0/1ae374ca146a0d7457794926eed808c99971628e594f704a42ae2540b1f38928b26cbf942a7bbcc2796cc9fe8d9d7a603ac422bd9b89b714d2f91b506da40792
+  languageName: node
+  linkType: hard
+
+"@formatjs/intl@npm:2.10.12":
+  version: 2.10.12
+  resolution: "@formatjs/intl@npm:2.10.12"
+  dependencies:
+    "@formatjs/ecma402-abstract": "npm:2.2.2"
+    "@formatjs/fast-memoize": "npm:2.2.3"
+    "@formatjs/icu-messageformat-parser": "npm:2.9.2"
+    "@formatjs/intl-displaynames": "npm:6.8.2"
+    "@formatjs/intl-listformat": "npm:7.7.2"
+    intl-messageformat: "npm:10.7.4"
+    tslib: "npm:2"
+  peerDependencies:
+    typescript: ^4.7 || 5
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 10c0/4475b1167c1cc6f2dbf9e373d4ba964032f80a25ca1ba18eca03dfa1730fcaef2c7cfe046252aaf3c23cf87e0968d565d3b7d1c2c336aec097193914173583c1
   languageName: node
   linkType: hard
 
@@ -11853,6 +11945,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/hoist-non-react-statics@npm:3, @types/hoist-non-react-statics@npm:^3.3.4":
+  version: 3.3.5
+  resolution: "@types/hoist-non-react-statics@npm:3.3.5"
+  dependencies:
+    "@types/react": "npm:*"
+    hoist-non-react-statics: "npm:^3.3.0"
+  checksum: 10c0/2a3b64bf3d9817d7830afa60ee314493c475fb09570a64e7737084cd482d2177ebdddf888ce837350bac51741278b077683facc9541f052d4bbe8487b4e3e618
+  languageName: node
+  linkType: hard
+
 "@types/html-minifier-terser@npm:^6.0.0":
   version: 6.1.0
   resolution: "@types/html-minifier-terser@npm:6.1.0"
@@ -12000,7 +12102,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:22.8.7":
+"@types/node@npm:22.8.7, @types/node@npm:>=8.1.0":
   version: 22.8.7
   resolution: "@types/node@npm:22.8.7"
   dependencies:
@@ -12123,7 +12225,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:18.3.12":
+"@types/react@npm:16 || 17 || 18, @types/react@npm:18.3.12":
   version: 18.3.12
   resolution: "@types/react@npm:18.3.12"
   dependencies:
@@ -15293,6 +15395,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"core-js@npm:^3":
+  version: 3.39.0
+  resolution: "core-js@npm:3.39.0"
+  checksum: 10c0/f7602069b6afb2e3298eec612a5c1e0c3e6a458930fbfc7a4c5f9ac03426507f49ce395eecdd2d9bae9024f820e44582b67ffe16f2272395af26964f174eeb6b
+  languageName: node
+  linkType: hard
+
 "core-js@npm:^3.6.4":
   version: 3.38.1
   resolution: "core-js@npm:3.38.1"
@@ -16683,6 +16792,8 @@ __metadata:
     html-to-image: "npm:1.11.11"
     html2canvas: "npm:1.4.1"
     husky: "npm:9.1.6"
+    i18next: "npm:23.16.4"
+    i18next-resources-to-backend: "npm:1.2.1"
     jest: "npm:29.7.0"
     jest-environment-jsdom: "npm:29.7.0"
     jest-transform-stub: "npm:2.0.0"
@@ -16697,6 +16808,7 @@ __metadata:
     nanoid: "npm:5.0.8"
     next: "npm:15.0.2"
     next-compose-plugins: "npm:2.2.1"
+    next-i18next: "npm:15.3.1"
     next-nprogress-bar: "npm:2.3.14"
     next-seo: "npm:6.6.0"
     next-sitemap: "npm:4.2.3"
@@ -16728,8 +16840,10 @@ __metadata:
     react-google-recaptcha-v3: "npm:1.10.1"
     react-hook-form: "npm:7.53.1"
     react-hot-toast: "npm:2.4.1"
+    react-i18next: "npm:15.1.0"
     react-icons: "npm:5.3.0"
     react-intersection-observer: "npm:9.13.1"
+    react-intl: "npm:6.8.5"
     react-multi-date-picker: "npm:4.5.2"
     react-number-format: "npm:5.4.2"
     react-paginate: "npm:8.2.0"
@@ -16748,6 +16862,7 @@ __metadata:
     semantic-release: "npm:24.2.0"
     sharp: "npm:0.33.5"
     storybook: "npm:8.4.1"
+    stripe: "npm:17.3.1"
     striptags: "npm:3.2.0"
     styled-components: "npm:6.1.13"
     superjson: "npm:2.2.1"
@@ -19657,7 +19772,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^3.3.1, hoist-non-react-statics@npm:^3.3.2":
+"hoist-non-react-statics@npm:3, hoist-non-react-statics@npm:^3.3.0, hoist-non-react-statics@npm:^3.3.1, hoist-non-react-statics@npm:^3.3.2":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
   dependencies:
@@ -19753,6 +19868,15 @@ __metadata:
   bin:
     html-minifier-terser: cli.js
   checksum: 10c0/1aa4e4f01cf7149e3ac5ea84fb7a1adab86da40d38d77a6fff42852b5ee3daccb78b615df97264e3a6a5c33e57f0c77f471d607ca1e1debd1dab9b58286f4b5a
+  languageName: node
+  linkType: hard
+
+"html-parse-stringify@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "html-parse-stringify@npm:3.0.1"
+  dependencies:
+    void-elements: "npm:3.1.0"
+  checksum: 10c0/159292753d48b84d216d61121054ae5a33466b3db5b446e2ffc093ac077a411a99ce6cbe0d18e55b87cf25fa3c5a86c4d8b130b9719ec9b66623259000c72c15
   languageName: node
   linkType: hard
 
@@ -19944,6 +20068,31 @@ __metadata:
   version: 1.1.0
   resolution: "hyphenate-style-name@npm:1.1.0"
   checksum: 10c0/bfe88deac2414a41a0d08811e277c8c098f23993d6a1eb17f14a0f11b54c4d42865a63d3cfe1914668eefb9a188e2de58f38b55a179a238fd1fef606893e194f
+  languageName: node
+  linkType: hard
+
+"i18next-fs-backend@npm:^2.3.2":
+  version: 2.3.2
+  resolution: "i18next-fs-backend@npm:2.3.2"
+  checksum: 10c0/5760843ade112821e4df62dffcdab769a09550bbe26264bb03babd60a122b4a1520a7ee95de228d3b932d2ac4220fc7669936026c10a729292c98cacdee8c49b
+  languageName: node
+  linkType: hard
+
+"i18next-resources-to-backend@npm:1.2.1":
+  version: 1.2.1
+  resolution: "i18next-resources-to-backend@npm:1.2.1"
+  dependencies:
+    "@babel/runtime": "npm:^7.23.2"
+  checksum: 10c0/ba83152726aae34ab34bb152518b666d4393bf816c91ab6e1064090cbbb9b235d3dfbcf9d5640c825819644fddcaf7799f581cdbe6abb3e7b11d58c50dc4644a
+  languageName: node
+  linkType: hard
+
+"i18next@npm:23.16.4":
+  version: 23.16.4
+  resolution: "i18next@npm:23.16.4"
+  dependencies:
+    "@babel/runtime": "npm:^7.23.2"
+  checksum: 10c0/b016d98bb8a11fa16e2598897b0ea388b664e28e38acbd7e6580ce8ff300a9b4c66eb849883b1c36dbee9800abb830887293adbb1e598b679ea29006a3bc6af9
   languageName: node
   linkType: hard
 
@@ -20240,6 +20389,18 @@ __metadata:
   version: 2.0.3
   resolution: "internmap@npm:2.0.3"
   checksum: 10c0/8cedd57f07bbc22501516fbfc70447f0c6812871d471096fad9ea603516eacc2137b633633daf432c029712df0baefd793686388ddf5737e3ea15074b877f7ed
+  languageName: node
+  linkType: hard
+
+"intl-messageformat@npm:10.7.4":
+  version: 10.7.4
+  resolution: "intl-messageformat@npm:10.7.4"
+  dependencies:
+    "@formatjs/ecma402-abstract": "npm:2.2.2"
+    "@formatjs/fast-memoize": "npm:2.2.3"
+    "@formatjs/icu-messageformat-parser": "npm:2.9.2"
+    tslib: "npm:2"
+  checksum: 10c0/698e1b020f744a1790eb0a68edc86a8d215c3d3df3d67a1c77f50ce0582af9fadc8656ff988b7806708f997e0e8462a044602f28d8f334f4e8b3233cf3b03f3e
   languageName: node
   linkType: hard
 
@@ -23680,6 +23841,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"next-i18next@npm:15.3.1":
+  version: 15.3.1
+  resolution: "next-i18next@npm:15.3.1"
+  dependencies:
+    "@babel/runtime": "npm:^7.23.2"
+    "@types/hoist-non-react-statics": "npm:^3.3.4"
+    core-js: "npm:^3"
+    hoist-non-react-statics: "npm:^3.3.2"
+    i18next-fs-backend: "npm:^2.3.2"
+  peerDependencies:
+    i18next: ">= 23.7.13"
+    next: ">= 12.0.0"
+    react: ">= 17.0.2"
+    react-i18next: ">= 13.5.0"
+  checksum: 10c0/e8657760edbf345a7e047a0594f60cc2b28f66db46b9f26bbb57f5da5b30536adc4a49d640ecbb7c0c871381536496f885e9c5e34a41c8c6fd144e2fc4408435
+  languageName: node
+  linkType: hard
+
 "next-nprogress-bar@npm:2.3.14":
   version: 2.3.14
   resolution: "next-nprogress-bar@npm:2.3.14"
@@ -25800,7 +25979,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qs@npm:6.13.0, qs@npm:^6.10.0, qs@npm:^6.12.3":
+"qs@npm:6.13.0, qs@npm:^6.10.0, qs@npm:^6.11.0, qs@npm:^6.12.3":
   version: 6.13.0
   resolution: "qs@npm:6.13.0"
   dependencies:
@@ -26079,6 +26258,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-i18next@npm:15.1.0":
+  version: 15.1.0
+  resolution: "react-i18next@npm:15.1.0"
+  dependencies:
+    "@babel/runtime": "npm:^7.25.0"
+    html-parse-stringify: "npm:^3.0.1"
+  peerDependencies:
+    i18next: ">= 23.2.3"
+    react: ">= 16.8.0"
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
+    react-native:
+      optional: true
+  checksum: 10c0/a812a8345222e4c0b9423cec6bf0997abf5b72802d29c4b5c91c3a8ba0be87f536f5968456d6e3b6526e978ea5db7addde24d5855dd98a1d4ca7eb9aed8a9b20
+  languageName: node
+  linkType: hard
+
 "react-icons@npm:5.3.0":
   version: 5.3.0
   resolution: "react-icons@npm:5.3.0"
@@ -26098,6 +26295,30 @@ __metadata:
     react-dom:
       optional: true
   checksum: 10c0/c64722db407e0ca83945bf97621ab4618fa74f3a70b528ff43988818d46feee8962bd12e70203d2d92b31030889a1f813d00e0aa3d781a7bc39fb293c277ee04
+  languageName: node
+  linkType: hard
+
+"react-intl@npm:6.8.5":
+  version: 6.8.5
+  resolution: "react-intl@npm:6.8.5"
+  dependencies:
+    "@formatjs/ecma402-abstract": "npm:2.2.2"
+    "@formatjs/icu-messageformat-parser": "npm:2.9.2"
+    "@formatjs/intl": "npm:2.10.12"
+    "@formatjs/intl-displaynames": "npm:6.8.2"
+    "@formatjs/intl-listformat": "npm:7.7.2"
+    "@types/hoist-non-react-statics": "npm:3"
+    "@types/react": "npm:16 || 17 || 18"
+    hoist-non-react-statics: "npm:3"
+    intl-messageformat: "npm:10.7.4"
+    tslib: "npm:2"
+  peerDependencies:
+    react: ^16.6.0 || 17 || 18
+    typescript: ^4.7 || 5
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 10c0/73707912c00a646460c1497f7004bf511b58ec28265f0d8d65b1677a43f62a957bab40f2b5a1759b7f11cc28af10754e8552890b9b485d3f9505c0a36a692fbc
   languageName: node
   linkType: hard
 
@@ -28374,6 +28595,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"stripe@npm:17.3.1":
+  version: 17.3.1
+  resolution: "stripe@npm:17.3.1"
+  dependencies:
+    "@types/node": "npm:>=8.1.0"
+    qs: "npm:^6.11.0"
+  checksum: 10c0/96c9595428775d3bb5d619f770dd4775357ec778be4033915d629ef6033d29a70ec4d916311cc2e1e5e5e45646d9b53fcef6215e60e1ea183d89554bd61e7055
+  languageName: node
+  linkType: hard
+
 "striptags@npm:3.2.0":
   version: 3.2.0
   resolution: "striptags@npm:3.2.0"
@@ -29198,6 +29429,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tslib@npm:2, tslib@npm:^2.8.1":
+  version: 2.8.1
+  resolution: "tslib@npm:2.8.1"
+  checksum: 10c0/9c4759110a19c53f992d9aae23aac5ced636e99887b51b9e61def52611732872ff7668757d4e4c61f19691e36f4da981cd9485e869b4a7408d689f6bf1f14e62
+  languageName: node
+  linkType: hard
+
 "tslib@npm:2.4.1":
   version: 2.4.1
   resolution: "tslib@npm:2.4.1"
@@ -29230,13 +29468,6 @@ __metadata:
   version: 2.8.0
   resolution: "tslib@npm:2.8.0"
   checksum: 10c0/31e4d14dc1355e9b89e4d3c893a18abb7f90b6886b089c2da91224d0a7752c79f3ddc41bc1aa0a588ac895bd97bb99c5bc2bfdb2f86de849f31caeb3ba79bbe5
-  languageName: node
-  linkType: hard
-
-"tslib@npm:^2.8.1":
-  version: 2.8.1
-  resolution: "tslib@npm:2.8.1"
-  checksum: 10c0/9c4759110a19c53f992d9aae23aac5ced636e99887b51b9e61def52611732872ff7668757d4e4c61f19691e36f4da981cd9485e869b4a7408d689f6bf1f14e62
   languageName: node
   linkType: hard
 
@@ -30424,6 +30655,13 @@ __metadata:
   version: 1.1.2
   resolution: "vm-browserify@npm:1.1.2"
   checksum: 10c0/0cc1af6e0d880deb58bc974921320c187f9e0a94f25570fca6b1bd64e798ce454ab87dfd797551b1b0cc1849307421aae0193cedf5f06bdb5680476780ee344b
+  languageName: node
+  linkType: hard
+
+"void-elements@npm:3.1.0":
+  version: 3.1.0
+  resolution: "void-elements@npm:3.1.0"
+  checksum: 10c0/0b8686f9f9aa44012e9bd5eabf287ae0cde409b9a2854c5a2335cb83920c957668ac5876e3f0d158dd424744ac411a7270e64128556b451ed3bec875ef18534d
   languageName: node
   linkType: hard
 
