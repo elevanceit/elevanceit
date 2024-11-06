@@ -1,6 +1,5 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
 import { createEnv } from "@t3-oss/env-nextjs"
+import "dotenv/config"
 import { z } from "zod"
 
 export const env = createEnv({
@@ -14,6 +13,7 @@ export const env = createEnv({
       .enum(["true", "false"])
       .optional()
       .transform((value) => value === "true"),
+    VERCEL_URL: z.string().optional(),
     MONGODB_URI: z.string(),
     DATABASE_URL: z.string(),
     RECAPTHA_SECRET_KEY: z.string(),
@@ -27,6 +27,7 @@ export const env = createEnv({
   },
   runtimeEnv: {
     ANALYZE: process.env.ANALYZE,
+    VERCEL_URL: process.env.VERCEL_URL,
     MONGODB_URI: process.env.MONGODB_URI,
     DATABASE_URL: process.env.DATABASE_URL,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,

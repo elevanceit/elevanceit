@@ -22,7 +22,7 @@ export const awsRouter = router({
 
       return input.map((file) => {
         return s3.createPresignedPost({
-          Bucket: env.BUCKET_NAME,
+          Bucket: env.AWS_BUCKET_NAME,
           Fields: {
             key: `${uuidv4()}${path.extname(file.fileName)}`,
             "Content-Type": file.fileType,

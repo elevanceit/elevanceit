@@ -1,6 +1,5 @@
 import { HTMLAttributes, HTMLInputTypeAttribute, ReactNode } from "react"
-import { FieldValues } from "react-hook-form/dist/types/fields"
-import { Control } from "react-hook-form/dist/types/form"
+import { Control, FieldValues } from "react-hook-form"
 import { PatternFormat } from "react-number-format"
 import * as Switch from "@radix-ui/react-switch"
 import { cn } from "../../utils"

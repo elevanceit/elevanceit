@@ -1,5 +1,4 @@
-import { FieldValues } from "react-hook-form/dist/types/fields"
-import { Control } from "react-hook-form/dist/types/form"
+import { Control, FieldValues } from "react-hook-form"
 import { DefaultInputComponentProps } from "react-phone-number-input"
 import PhoneInputWithCountry, {
   DefaultFormValues,
